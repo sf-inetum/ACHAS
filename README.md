@@ -99,7 +99,9 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
         ```
 
 1. Assign the **CORE** permission set to the default user:
-     1. Run this command in a terminal to deploy the app.
+
+    1. Run this command in a terminal to deploy the app.
+
         ```
         sfdx force:user:permset:assign -n CORE
         ```

@@ -1,5 +1,5 @@
 {
-    "name": "proyectobase",
+    "name": "ACHS",
     "private": true,
     "version": "1.0.0",
     "description": "proyecto base con CICD en inetum",
@@ -14,12 +14,12 @@
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "postinstall": "node bin/check-version.js && husky install",
-        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && (npm run lint && npm run test) || exit -1"
+        "precommit": "npm run prettier:verify || exit -1"
     },
     "author": "inetum",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sf-inetum/proyectobase"
+        "url": "https://github.com/sf-inetum/ACHS"
     },
     "engines": {
         "node": ">= 10.13.0",
