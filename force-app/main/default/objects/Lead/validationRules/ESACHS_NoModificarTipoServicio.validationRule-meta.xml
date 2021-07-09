@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_NoModificarTipoServicio</fullName>
+    <active>true</active>
+    <description>Una vez creado el registro, el campo &quot;Tipo de servicio&quot; no puede ser editado por los usuarios, sólo el perfil &quot;ESACHS - Gerencia&quot; podrá generar la modificación del campo &quot;Tipo de servicio&quot; después de ser creado el registro</description>
+    <errorConditionFormula>AND(
+				NOT(ISBLANK(RecordTypeId)), 
+				RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+				NOT($Permission.ESACHS_Gerencia),
+				NOT(ISBLANK(PRIORVALUE(ESACHS_TipoDeServicio__c))),
+				ISCHANGED(ESACHS_TipoDeServicio__c)
+)</errorConditionFormula>
+    <errorMessage>No puede modificar el campo &quot;Tipo de Servicio&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alerta_a_jefe_por_falta_de_actividad</fullName>
+        <description>Alerta a jefe por falta de actividad</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Alerta_por_falta_de_actividad</template>
+    </alerts>
+    <alerts>
+        <fullName>Alertar_dueno_de_cuenta</fullName>
+        <description>Alertar dueño de cuenta</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Alerta_por_falta_de_actividad</template>
+    </alerts>
+    <alerts>
+        <fullName>Enviar_Correo_Opp_Aprobada</fullName>
+        <description>Enviar Correo Opp Aprobada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Oportunidad_Aprobada</template>
+    </alerts>
+    <alerts>
+        <fullName>Enviar_Correo_Opp_Rechazada</fullName>
+        <description>Enviar Correo Opp Rechazada</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Oportunidad_Rechazada</template>
+    </alerts>
+    <alerts>
+        <fullName>Enviar_correo_a_Jefe</fullName>
+        <description>Enviar correo a Jefe</description>
+        <protected>false</protected>
+        <recipients>
+            <field>JefeSupervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Alerta_por_falta_de_actividad</template>
+    </alerts>
+    <alerts>
+        <fullName>Informar_Conversion_prospecto_a_due_o_opp</fullName>
+        <description>Informar Conversión prospecto a dueño Oportunidad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Informar_due_o_oportunidad_conversion_prospecto</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificar_oportunidad_captada_a_referidor_de_oportunidad</fullName>
+        <description>Notificar oportunidad captada a referidor de oportunidad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/oportunidad_a_estado_captada</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificar_oportunidad_perdida_a_referidor_de_oportunidad</fullName>
+        <description>Notificar oportunidad perdida a referidor de oportunidad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/oportunidad_a_estado_perdida</template>
+    </alerts>
+    <alerts>
+        <fullName>Prueba_de_Alerta_a_Jefe_Falta_de_Actividad</fullName>
+        <description>Prueba de Alerta a Jefe Falta de Actividad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>JefeSupervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Alerta_por_falta_de_actividad</template>
+    </alerts>
+    <alerts>
+        <fullName>Prueba_de_alerta_a_jefe_falta_actividad</fullName>
+        <description>Prueba de alerta a jefe falta actividad</description>
+        <protected>false</protected>
+        <recipients>
+            <field>JefeSupervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Alerta_por_falta_de_actividad</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Actualiza_Masa</fullName>
+        <field>Masa__c</field>
+        <formula>Account.NumberOfEmployees</formula>
+        <name>Actualiza Masa</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualiza_estado</fullName>
+        <field>Estatus_de_validacion_carpeta__c</field>
+        <literalValue>En espera de carpeta</literalValue>
+        <name>Actualiza estado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizacion_funcion_proprietario</fullName>
+        <field>Funcion_propietario__c</field>
+        <formula>CreatedBy.UserRole.DeveloperName</formula>
+        <name>Actualizacion funcion proprietario</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizar_Etapa</fullName>
+        <description>actualiza etapa a reunión ejecutivo</description>
+        <field>StageName</field>
+        <literalValue>Reunión con Ejecutivo</literalValue>
+        <name>Actualizar Etapa</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Aprobado</fullName>
+        <field>Estatus_de_la_Aprobaci_n__c</field>
+        <literalValue>Aprobado</literalValue>
+        <name>Aprobado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Aprobar_Oportunidad</fullName>
+        <field>Oportunidad_aprobada__c</field>
+        <literalValue>1</literalValue>
+        <name>Aprobar Oportunidad</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Asignacion_de_Fecha_de_Cierre</fullName>
+        <field>CloseDate</field>
+        <formula>IF(Masa__c  &gt;= 1 &amp;&amp; Masa__c &lt;= 99, (DATEVALUE(CreatedDate) + 90), 
+		IF(Masa__c  &gt;= 100 &amp;&amp; Masa__c &lt;= 599, (DATEVALUE(CreatedDate) + 120), 
+					IF(Masa__c  &gt;= 600, (DATEVALUE(CreatedDate) + 210), CloseDate)))</formula>
+        <name>Asignacion de Fecha de Cierre</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Carpeta_Aceptada</fullName>
+        <field>Estatus_de_validacion_carpeta__c</field>
+        <literalValue>Aceptada</literalValue>
+        <name>Carpeta Aceptada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_False</fullName>
+        <field>En_proceso_de_venta__c</field>
+        <literalValue>0</literalValue>
+        <name>Check_False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaEstado</fullName>
+        <description>Actualiza el estado de la Oportunidad a &quot;Nuevo&quot;</description>
+        <field>StageName</field>
+        <literalValue>Nuevo</literalValue>
+        <name>Actualiza Estado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaRecordType</fullName>
+        <description>Asigna a la nueva oportunidad el RT Ventas ESACHS (si el Lead era de Ventas ESACHS)</description>
+        <field>RecordTypeId</field>
+        <lookupValue>ESACHS_Ventas</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Actualiza Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>En_espera_de_carpeta</fullName>
+        <field>Estatus_de_validacion_carpeta__c</field>
+        <literalValue>En espera de carpeta</literalValue>
+        <name>En espera de carpeta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Esperando_primera_aprobaci_n</fullName>
+        <field>Estatus_de_la_Aprobaci_n__c</field>
+        <literalValue>Esperando primera aprobación</literalValue>
+        <name>Esperando primera aprobación</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Esperando_segunda_aprobaci_n</fullName>
+        <field>Estatus_de_la_Aprobaci_n__c</field>
+        <literalValue>Esperando segunda aprobación</literalValue>
+        <name>Esperando segunda aprobación</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Etapa_perdida_masa_mas_de_50</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Etapa perdida masa mas de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Etapa_perdida_masa_mayor_de_50</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Etapa perdida masa &gt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_Asignacion</fullName>
+        <field>Fecha_Asignacion__c</field>
+        <formula>TODAY()</formula>
+        <name>Fecha Asignacion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_de_cierre_Hoy</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Fecha de cierre Hoy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_de_perdida_mas_mas_de_50</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Fecha de perdida mas mas de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_de_perdida_masa_50</fullName>
+        <field>CloseDate</field>
+        <formula>LastModifiedDate + 45</formula>
+        <name>Fecha de perdida masa &gt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_de_perdida_masa_menor_de_50</fullName>
+        <field>CloseDate</field>
+        <formula>LastModifiedDate + 30</formula>
+        <name>Fecha de perdida masa &lt;= 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Motivo_de_Perdida_Inactividad_Mas_de_50</fullName>
+        <field>Motivo_de_Perdida__c</field>
+        <literalValue>Plazo Expirado</literalValue>
+        <name>Motivo de Perdida Inactividad &gt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Motivo_de_Perdida_Inactivo_Masa_Menor_50</fullName>
+        <field>Motivo_de_Perdida__c</field>
+        <literalValue>Plazo Expirado</literalValue>
+        <name>Motivo de Perdida Inactivo Masa &lt;= 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Motivo_de_Perdida_masa_mas_de_50</fullName>
+        <field>Motivo_de_Perdida__c</field>
+        <literalValue>Plazo Expirado</literalValue>
+        <name>Motivo de Perdida masa mas de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Notas_de_campo_masa_menos_de_50</fullName>
+        <field>Notas_de_Motivo_de_perdida__c</field>
+        <formula>&quot;Esta oportunidad no tuvo actividad por mas de 30 dias&quot;</formula>
+        <name>Notas de campo masa menos de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Notas_de_perdida_masa_mas_de_50</fullName>
+        <field>Notas_de_Motivo_de_perdida__c</field>
+        <formula>&quot;Esta oportunidad no tuvo actividad por mas de 45 dias&quot;</formula>
+        <name>Notas de perdida masa mas de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oportunidad_Captada</fullName>
+        <field>StageName</field>
+        <literalValue>Captada</literalValue>
+        <name>Oportunidad Captada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oportunidad_Perdida</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Oportunidad Perdida</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oportunidad_perdida_por_no_atender_recha</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Oportunidad perdida por no atender recha</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Perdida_masa_menor_de_50</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Perdida masa &lt;= de 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_Motivo_perdida_masa_mas_50</fullName>
+        <field>Motivo_de_Perdida__c</field>
+        <literalValue>Plazo Expirado</literalValue>
+        <name>Prueba Motivo perdida masa mas 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_cierre_automatico_masa_menor_50</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Prueba cierre automatico masa &lt;50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_etapa_perdida_masa_mas_50</fullName>
+        <field>StageName</field>
+        <literalValue>Perdida</literalValue>
+        <name>Prueba etapa perdida masa mas 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_fecha_perdida_masa_50</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Prueba fecha perdida masa &lt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_fecha_perdida_masa_mas_50</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Prueba fecha perdida masa mas 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_motivo_de_perdida_masa_50</fullName>
+        <field>Motivo_de_Perdida__c</field>
+        <literalValue>Plazo Expirado</literalValue>
+        <name>Prueba motivo de perdida masa &lt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prueba_notas_perdida_mas_mas_50</fullName>
+        <field>Notas_de_Motivo_de_perdida__c</field>
+        <formula>&quot;Esta oportunidad no tuvo movimiento por 2 dias como acordado para esta prueba&quot;</formula>
+        <name>Prueba notas perdida mas mas 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pruebas_notas_masa_50</fullName>
+        <field>Notas_de_Motivo_de_perdida__c</field>
+        <formula>&quot;Esta oportunidad no tuvo movimiento por 1 dia como discutido para esta regla&quot;</formula>
+        <name>Pruebas notas masa &lt; 50</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RT_Call_Center</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Ventas_Call_Center</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RT Call Center</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RT_ventas_presenciales</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Ventas_Presenciales</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>RT ventas presenciales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rechazado</fullName>
+        <field>Estatus_de_la_Aprobaci_n__c</field>
+        <literalValue>Rechazado</literalValue>
+        <name>Rechazado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Related_Acc_substatus_update</fullName>
+        <field>Subestatus_de_la_cuenta__c</field>
+        <literalValue>En espera</literalValue>
+        <name>Related Acc substatus update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retrocede_Etapa</fullName>
+        <field>StageName</field>
+        <literalValue>Proceso Creación Carpeta</literalValue>
+        <name>Retrocede Etapa</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Validacion_carpeta</fullName>
+        <field>StageName</field>
+        <literalValue>Proceso Validación Carpeta</literalValue>
+        <name>Validación carpeta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Actualizacion funcion proprietario</fullName>
+        <actions>
+            <name>Actualizacion_funcion_proprietario</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Solicitud de Capacitación</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alerta a jefe por falta de actividad</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Enviar_correo_a_Jefe</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>20</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Asignación de fecha de cierre 2</fullName>
+        <actions>
+            <name>Asignacion_de_Fecha_de_Cierre</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas Call Center,Ventas Presenciales</value>
+        </criteriaItems>
+        <description>Si la cuenta relacionada a la oportunidad cuenta con una Masa la regla se activa</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Call Center</fullName>
+        <actions>
+            <name>RT_Call_Center</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>Ventas Call Center</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>Supervisor de Ventas Call Center</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cambiar subestatus de cuenta relacionada</fullName>
+        <actions>
+            <name>Related_Acc_substatus_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Captada</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Carpeta aceptada</fullName>
+        <actions>
+            <name>Oportunidad_Captada</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Estatus_de_validacion_carpeta__c</field>
+            <operation>equals</operation>
+            <value>Aceptada</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cerrar Oportunidad si fecha de cierre es igual a hoy</fullName>
+        <actions>
+            <name>Asignacion_de_Fecha_de_Cierre</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Perdida</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas Call Center,Ventas Presenciales</value>
+        </criteriaItems>
+        <description>Si la cuenta relacionada a la oportunidad cuenta con una Masa la regla se activa</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>ESACHS - Asigna RT Ventas ESACHS Opportunity</fullName>
+        <actions>
+            <name>ESACHS_ActualizaRecordType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.ESACHS_CreatedFromLead__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Asigna a las oportunidades generadas desde prospectos con RT Ventas ESACHS el RT Ventas ESACHS.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ESACHS - Cambia Estado Oportunidad</fullName>
+        <actions>
+            <name>ESACHS_ActualizaEstado</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.ESACHS_CreatedFromLead__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>El estado predefinido de la oportunidad tras la conversión del Lead debe ser “Nuevo”.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fecha Asignacion</fullName>
+        <actions>
+            <name>Fecha_Asignacion</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Subestado__c</field>
+            <operation>equals</operation>
+            <value>Asignado a OTEC</value>
+        </criteriaItems>
+        <description>S-665537</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Nueva Opp</fullName>
+        <actions>
+            <name>Actualiza_Masa</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Oportunidad con masa mas de 50</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>greaterThan</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Etapa_perdida_masa_mas_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Fecha_de_perdida_mas_mas_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Motivo_de_Perdida_masa_mas_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Notas_de_perdida_masa_mas_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Oportunidad perdida carpeta rechazada</fullName>
+        <active>false</active>
+        <description>Una oportunidad se pierde 15 dias despues de que se haya cambiado a verificacion carpeta si no se ha cambiado a en verificacion</description>
+        <formula>AND(ISPICKVAL(Estatus_de_Carpeta_Fisica__c, &quot;Rechazada&quot;), ISPICKVAL( Estatus_de_validacion_carpeta__c, &quot;En Verificacion&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Oportunidad_perdida_por_no_atender_recha</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Oportunidad perdida masa %3C%3D 50</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>lessOrEqual</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Fecha_de_perdida_masa_menor_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Motivo_de_Perdida_Inactivo_Masa_Menor_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Notas_de_campo_masa_menos_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Perdida_masa_menor_de_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Prueba%3A Alerta a jefe por falta de actividad</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Prueba_de_alerta_a_jefe_falta_actividad</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Prueba%3A Oportunidad con masa mas de 50</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>greaterThan</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Prueba_Motivo_perdida_masa_mas_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Prueba_etapa_perdida_masa_mas_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Prueba_fecha_perdida_masa_mas_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Prueba_notas_perdida_mas_mas_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Prueba%3A Oportunidad perdida masa %3C%3D 50</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Masa__c</field>
+            <operation>lessOrEqual</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Captada,Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Prueba_cierre_automatico_masa_menor_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Prueba_fecha_perdida_masa_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Prueba_motivo_de_perdida_masa_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Pruebas_notas_masa_50</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Opportunity.LastModifiedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Si la oportunidad se pierde</fullName>
+        <actions>
+            <name>Fecha_de_cierre_Hoy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Perdida</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Validacion Carpeta</fullName>
+        <actions>
+            <name>En_espera_de_carpeta</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Proceso Validación Carpeta</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Ventas Presenciales</fullName>
+        <actions>
+            <name>Actualizar_Etapa</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>RT_ventas_presenciales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Call Center - Ejecutivo Captación</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Call Center - Supervisor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Consultoría en Seguridad,Solicitud de Capacitación</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Oportunidad_esperando_aprobaci_n</fullName>
+        <assignedTo>Ejecutivo_de_Agencia</assignedTo>
+        <assignedToType>role</assignedToType>
+        <dueDateOffset>15</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Oportunidad esperando aprobación</subject>
+    </tasks>
+    <tasks>
+        <fullName>Oportunidad_lista_para_aprobacion</fullName>
+        <assignedTo>Ejecutivo_de_Agencia</assignedTo>
+        <assignedToType>role</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Oportunidad lista para aprobacion</subject>
+    </tasks>
+    <tasks>
+        <fullName>Oportunidad_lista_para_aprobacion_procesos</fullName>
+        <assignedTo>Administrativo_de_Centro_de_Procesos</assignedTo>
+        <assignedToType>role</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Oportunidad lista para aprobacion</subject>
+    </tasks>
+</Workflow>

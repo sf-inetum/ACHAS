@@ -1,0 +1,1 @@
+<p>Estimados usuarios,<br /><br />El an&aacute;lisis de factibilidad del prospecto "{!Lead.ESACHS_TipoDeServicio__c} {!Lead.Company}" ha sido rechazado.<br /><br />Por favor para revisar los detalles en el registro, haga clic aqu&iacute; {!Lead.Link}<br /><br /><br />Muchas gracias<br /><br />Un saludo</p>

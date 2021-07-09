@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Analista Comercial; Soporte Comercial</description>
+    <label>ESACHS_Soporte Comercial</label>
+    <permissionSets>ESACHS_Contactototal</permissionSets>
+    <permissionSets>ESACHS_Cuentatotal</permissionSets>
+    <permissionSets>ESACHS_Leadtotal</permissionSets>
+    <permissionSets>ESACHS_Oportunidadtotal</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

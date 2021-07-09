@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Director Médico; Enfermero/a Coordinador/a de Calidad; Jefe de Gestión Clínica y Sanitaria</description>
+    <label>ESACHS - Director Médico</label>
+    <permissionSets>ESACHS_ContactolecturaCreacion</permissionSets>
+    <permissionSets>ESACHS_Cuentalectura</permissionSets>
+    <permissionSets>ESACHS_OportunidadlecturaEdicion</permissionSets>
+    <permissionSets>ESACHS_ProspectosLecturaEdicion</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

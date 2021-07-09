@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alerta_de_desafiliaci_n</fullName>
+        <description>Alerta de desafiliación</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Jefe_del_propietario__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Alerta_de_desafiliacion</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerta_de_desafiliacion</fullName>
+        <description>Alerta roja de desafiliación</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Jefe_del_propietario__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Alerta_roja_de_desafiliacion</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Actualizar_Subestatus</fullName>
+        <field>Subestatus_de_la_cuenta__c</field>
+        <literalValue>En proceso de venta</literalValue>
+        <name>Actualizar Subestatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizar_checkbox_Estatus_Cuenta</fullName>
+        <field>Modificaci_n_Estatus_Cuenta__c</field>
+        <literalValue>1</literalValue>
+        <name>Actualizar checkbox Estatus Cuenta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizar_checkbox_de_Cotizacion</fullName>
+        <field>Modificaci_n_Tasa_de_Cotizaci_n__c</field>
+        <literalValue>1</literalValue>
+        <name>Actualizar checkbox de Cotizacion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Actualizar_checkbox_de_Direccion</fullName>
+        <field>Modificaci_n_Direcci_n__c</field>
+        <literalValue>1</literalValue>
+        <name>Actualizar checkbox de Direccion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaRecordType</fullName>
+        <description>Asigna a la nueva cuenta el RT Cuentas ESACHS (si el Lead era de Ventas ESACHS)</description>
+        <field>RecordTypeId</field>
+        <lookupValue>ESACHS_Cuentas</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Actualiza Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fecha_de_Alerta_Roja</fullName>
+        <field>Fecha_creacion_Alerta_Roja__c</field>
+        <formula>TODAY()</formula>
+        <name>Fecha de Alerta Roja</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vigente_Activa</fullName>
+        <field>Subestatus_de_la_cuenta__c</field>
+        <literalValue>Activo</literalValue>
+        <name>Vigente Activa</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Activar Cuentas según fecha de vigencia</fullName>
+        <active>true</active>
+        <formula>IF(ISPICKVAL(Estatus_de_la_cuenta__c, &apos;Vigente&apos;) &amp;&amp;  				NOT(ISPICKVAL(Subestatus_de_la_cuenta__c,  &apos;Activo&apos;)), 			TRUE, 			FALSE)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Vigente_Activa</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account.Fecha_de_vigencia__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Actualizar Subestatus de la cuenta</fullName>
+        <actions>
+            <name>Actualizar_Subestatus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Estatus_de_la_cuenta__c</field>
+            <operation>equals</operation>
+            <value>001</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alerta Roja</fullName>
+        <actions>
+            <name>Fecha_de_Alerta_Roja</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2) AND (3 AND 4 AND 5 AND 6 AND 7)</booleanFilter>
+        <criteriaItems>
+            <field>Account.Alerta_de_Desafiliacion__c</field>
+            <operation>equals</operation>
+            <value>Amarilla</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Alerta_de_Desafiliacion__c</field>
+            <operation>equals</operation>
+            <value>Roja - Carta de Renuncia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Centro de Procesos - Supervisor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Administrador Comercial</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Administrador del sistema</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Centro de Procesos - Administrativo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.FirstName</field>
+            <operation>notContain</operation>
+            <value>Automated</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alerta de desafiliacion</fullName>
+        <actions>
+            <name>Alerta_de_desafiliaci_n</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.Alerta_de_Desafiliacion__c</field>
+            <operation>equals</operation>
+            <value>Amarilla</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Alerta_de_Desafiliacion__c</field>
+            <operation>equals</operation>
+            <value>Roja - Carta de Renuncia</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ESACHS - Asigna RT Ventas ESACHS%09Account</fullName>
+        <actions>
+            <name>ESACHS_ActualizaRecordType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.ESACHS_CreatedFromLead__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Asigna a las cuentas generadas desde prospectos con RT Ventas ESACHS el RT Ventas ESACHS.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Modificacion Direccion Rule</fullName>
+        <actions>
+            <name>Actualizar_checkbox_de_Direccion</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Actualiza el checkbox &quot;Modificación Dirección&quot; cuando Tipo de sucursal=&quot;Casa Matriz/Casa Matriz Finanzas&quot; y exista un cambio en: Calle, Número, Comuna y Región</description>
+        <formula>AND(  ISPICKVAL( Tipo_sucursal__c , &quot;01&quot;),  OR(   ISCHANGED(Nombre_de_la_calle__c),   ISCHANGED(Numero__c),   ISCHANGED(Comunas__c),   ISCHANGED(Regiones__c)  ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Modificacion Estatus Rule</fullName>
+        <actions>
+            <name>Actualizar_checkbox_Estatus_Cuenta</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  ISPICKVAL( Tipo_sucursal__c , &quot;01&quot;),  ISCHANGED( Subestatus_de_la_cuenta__c ),  OR(   AND(    ISPICKVAL(Subestatus_de_la_cuenta__c , &quot;Paralizada&quot;),    TEXT(PRIORVALUE(Subestatus_de_la_cuenta__c ))=&quot;Activo&quot;   ),   AND(    ISPICKVAL(Subestatus_de_la_cuenta__c , &quot;Activo&quot;),    TEXT(PRIORVALUE(Subestatus_de_la_cuenta__c ))=&quot;Paralizada&quot;   )  ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Tasa de Cotizacion Rule</fullName>
+        <actions>
+            <name>Actualizar_checkbox_de_Cotizacion</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Actualiza el checkbox &quot;Modificación Tasa de Cotización&quot; a true si existe una modificación en el campo picklist &quot;Tasa cotización&quot;</description>
+        <formula>ISCHANGED( Tasa_cotizacion__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

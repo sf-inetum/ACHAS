@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Ventas ESACHS</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>ESACHS_MotivoDePerdida__c</fieldNames>
+        <fieldNames>Motivo_de_Perdida__c</fieldNames>
+        <picklistValueName>Perdida</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>ESACHS_Ventas</recordTypeName>
+</PathAssistant>

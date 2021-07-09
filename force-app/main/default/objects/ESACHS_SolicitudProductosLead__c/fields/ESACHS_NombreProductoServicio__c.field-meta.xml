@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_NombreProductoServicio__c</fullName>
+    <externalId>false</externalId>
+    <label>Nombre Producto / Servicio</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Servicio Requerido</fullName>
+                <default>false</default>
+                <label>Servicio Requerido</label>
+            </value>
+            <value>
+                <fullName>Ambulancia de Emergencia Básica 4x2</fullName>
+                <default>false</default>
+                <label>Ambulancia de Emergencia Básica 4x2</label>
+            </value>
+            <value>
+                <fullName>Ambulancia de Emergencia Básica 4x4</fullName>
+                <default>false</default>
+                <label>Ambulancia de Emergencia Básica 4x4</label>
+            </value>
+            <value>
+                <fullName>Camioneta 4x4</fullName>
+                <default>false</default>
+                <label>Camioneta 4x4</label>
+            </value>
+            <value>
+                <fullName>Sala de Rayos</fullName>
+                <default>false</default>
+                <label>Sala de Rayos</label>
+            </value>
+            <value>
+                <fullName>Paramédico</fullName>
+                <default>false</default>
+                <label>Paramédico</label>
+            </value>
+            <value>
+                <fullName>Conductor</fullName>
+                <default>false</default>
+                <label>Conductor</label>
+            </value>
+            <value>
+                <fullName>Enfermera</fullName>
+                <default>false</default>
+                <label>Enfermera</label>
+            </value>
+            <value>
+                <fullName>Médico</fullName>
+                <default>false</default>
+                <label>Médico</label>
+            </value>
+            <value>
+                <fullName>Administrador de Contrato</fullName>
+                <default>false</default>
+                <label>Administrador de Contrato</label>
+            </value>
+            <value>
+                <fullName>Prevencionista</fullName>
+                <default>false</default>
+                <label>Prevencionista</label>
+            </value>
+            <value>
+                <fullName>Sistema de Turno</fullName>
+                <default>false</default>
+                <label>Sistema de Turno</label>
+            </value>
+            <value>
+                <fullName>Jornada</fullName>
+                <default>false</default>
+                <label>Jornada</label>
+            </value>
+            <value>
+                <fullName>Horario Inicio Jornada</fullName>
+                <default>false</default>
+                <label>Horario Inicio Jornada</label>
+            </value>
+            <value>
+                <fullName>Horario Término Jornada</fullName>
+                <default>false</default>
+                <label>Horario Término Jornada</label>
+            </value>
+            <value>
+                <fullName>Infraestructura para Centro de Salud</fullName>
+                <default>false</default>
+                <label>Infraestructura para Centro de Salud</label>
+            </value>
+            <value>
+                <fullName>Alojamiento</fullName>
+                <default>false</default>
+                <label>Alojamiento</label>
+            </value>
+            <value>
+                <fullName>Alimentación</fullName>
+                <default>false</default>
+                <label>Alimentación</label>
+            </value>
+            <value>
+                <fullName>Traslado desde/hacia Ciudad más Cercana</fullName>
+                <default>false</default>
+                <label>Traslado desde/hacia Ciudad más Cercana</label>
+            </value>
+            <value>
+                <fullName>Combustible para Móviles</fullName>
+                <default>false</default>
+                <label>Combustible para Móviles</label>
+            </value>
+            <value>
+                <fullName>Programa de Seguridad Preventivos</fullName>
+                <default>false</default>
+                <label>Programa de Seguridad Preventivos</label>
+            </value>
+            <value>
+                <fullName>Programa de Calidad de Vida</fullName>
+                <default>false</default>
+                <label>Programa de Calidad de Vida</label>
+            </value>
+            <value>
+                <fullName>Programa de Salud (FyS)</fullName>
+                <default>false</default>
+                <label>Programa de Salud (FyS)</label>
+            </value>
+            <value>
+                <fullName>Programa de Inclusión</fullName>
+                <default>false</default>
+                <label>Programa de Inclusión</label>
+            </value>
+            <value>
+                <fullName>Programa Hipobaria Intermitente Crónica</fullName>
+                <default>false</default>
+                <label>Programa Hipobaria Intermitente Crónica</label>
+            </value>
+            <value>
+                <fullName>Operativos Cardiovasculares</fullName>
+                <default>false</default>
+                <label>Operativos Cardiovasculares</label>
+            </value>
+            <value>
+                <fullName>Operativos Nutricional</fullName>
+                <default>false</default>
+                <label>Operativos Nutricional</label>
+            </value>
+            <value>
+                <fullName>Masajes en Sillas</fullName>
+                <default>false</default>
+                <label>Masajes en Sillas</label>
+            </value>
+            <value>
+                <fullName>Pausas Activas</fullName>
+                <default>false</default>
+                <label>Pausas Activas</label>
+            </value>
+            <value>
+                <fullName>Yoga</fullName>
+                <default>false</default>
+                <label>Yoga</label>
+            </value>
+            <value>
+                <fullName>Terapia Kinésica</fullName>
+                <default>false</default>
+                <label>Terapia Kinésica</label>
+            </value>
+            <value>
+                <fullName>Masoterapia</fullName>
+                <default>false</default>
+                <label>Masoterapia</label>
+            </value>
+            <value>
+                <fullName>Promoción de Estilos de Vida Saludables</fullName>
+                <default>false</default>
+                <label>Promoción de Estilos de Vida Saludables</label>
+            </value>
+            <value>
+                <fullName>SEL Terreno</fullName>
+                <default>false</default>
+                <label>SEL Terreno</label>
+            </value>
+            <value>
+                <fullName>Vacunas</fullName>
+                <default>false</default>
+                <label>Vacunas</label>
+            </value>
+            <value>
+                <fullName>Servicios de Seguridad Preventiva</fullName>
+                <default>false</default>
+                <label>Servicios de Seguridad Preventiva</label>
+            </value>
+            <value>
+                <fullName>Programa de Alcohol y Drogas</fullName>
+                <default>false</default>
+                <label>Programa de Alcohol y Drogas</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

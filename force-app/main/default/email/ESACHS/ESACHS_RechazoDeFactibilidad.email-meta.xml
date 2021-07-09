@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notificación del rechazo de factibilidad</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notificación Rechazo de factibilidad</name>
+    <style>none</style>
+    <subject>Rechazo de factibilidad</subject>
+    <textOnly>Estimados usuarios,
+
+El análisis de factibilidad del prospecto &quot;{!Lead.ESACHS_TipoDeServicio__c}  {!Lead.Company}&quot; ha sido rechazado. 
+
+Por favor para revisar los detalles en el registro, haga clic aquí {!Lead.Link}
+
+
+Muchas gracias  
+
+Un saludo</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

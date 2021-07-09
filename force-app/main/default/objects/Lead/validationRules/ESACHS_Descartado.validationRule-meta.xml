@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_Descartado</fullName>
+    <active>true</active>
+    <description>Para cerrar un prospecto con el estatus &quot;Descartado&quot; el sistema debe pedir de forma obligatoria que el usuario deba seleccione un valor en el campo &quot;Motivo de descarte&quot;</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(RecordTypeId)),
+				
+RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;, ISCHANGED(Status), ISPICKVAL(Status,&apos;Descartado&apos;), ISBLANK(TEXT(ESACHS_MotivoDeDescarte__c)))</errorConditionFormula>
+    <errorMessage>Se debe de seleccionar un valor en el motivo de descarte</errorMessage>
+</ValidationRule>

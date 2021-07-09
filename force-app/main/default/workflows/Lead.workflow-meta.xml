@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ESACHS_NotificacionAnalisisFactibilidad</fullName>
+        <description>Notificación Análisis de factibilidad</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ESACHS_FactibilidadMedicaCentroSalud</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>ESACHS_FactibilidadOperacionCentroSalud</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>ESACHS_FactibilidadPrevencionCentroSalud</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_NotificacionAnalisisFactibilidad</template>
+    </alerts>
+    <alerts>
+        <fullName>ESACHS_NotificacionEstadoCalificado</fullName>
+        <description>Notificación cambio de Estado a Calificado</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_NotificacionEstadoCalificado</template>
+    </alerts>
+    <alerts>
+        <fullName>ESACHS_NotificacionRechazoFactibilidad</fullName>
+        <description>Notificación Rechazo de factibilidad</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_RechazoDeFactibilidad</template>
+    </alerts>
+    <alerts>
+        <fullName>Estado_Convertido_informar_due_o_oportunidad</fullName>
+        <description>Estado Convertido informar dueño oportunidad</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Prospecto_ha_estado_convertido_Informar_due_o_oportunidad</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificacion_Solicitud_de_Adhesion</fullName>
+        <description>Notificación Solicitud de Adhesión</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notificaci_n_Solicitud_de_Adhesi_n</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificar_estado_No_convertido_a_referidor_del_prospecto</fullName>
+        <description>Notificar estado No convertido a referidor del prospecto.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Prospecto_ha_estado_No_convertido</template>
+    </alerts>
+    <alerts>
+        <fullName>Notificar_estado_priorizacion_a_referidor_del_prospecto</fullName>
+        <description>Notificar estado priorizacion a referidor del prospecto.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Correo_electronico_referidor__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>achs@achs.cl</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Prospecto_ha_estado_priorizado</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaFlagAprobacion</fullName>
+        <description>Este campo es utilizado para indicar que el proceso Lead ha sido aprobado por el proces de aprobación</description>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>1</literalValue>
+        <name>Actualiza Flag Aprobacion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaLeadStatus</fullName>
+        <description>Actualiza el Lead Status a ESACHS_IngresoDeSolicitud, ya que desde el formulario Web no es posible setearlo (lo crea como Nuevo)</description>
+        <field>Status</field>
+        <literalValue>ESACHS_IngresoDeSolicitud</literalValue>
+        <name>Actualiza Lead Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizacionCalificado</fullName>
+        <field>Status</field>
+        <literalValue>ESACHS_Calificado</literalValue>
+        <name>Actualización a Calificado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizacionDescartado</fullName>
+        <field>Status</field>
+        <literalValue>Descartado</literalValue>
+        <name>Actualización a Descartado</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizacionFactibilidad</fullName>
+        <field>Status</field>
+        <literalValue>ESACHS_Factibilidad</literalValue>
+        <name>Actualización a Factibilidad</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_DesmarcarFlag</fullName>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>0</literalValue>
+        <name>Desmarcar Flag Aprobacion Requerida</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_MotivoDedescarte</fullName>
+        <field>ESACHS_MotivoDeDescarte__c</field>
+        <literalValue>Negocio no factible</literalValue>
+        <name>Motivo de Descarte</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>ESACHS - Asigna Lead Status a Prospectos del Web To Lead</fullName>
+        <actions>
+            <name>ESACHS_ActualizaLeadStatus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <description>Asigna el Lead Status de ESACHS_IngresoDeSolicitud a los prospectos que son creados desde el Web To Lead</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>
