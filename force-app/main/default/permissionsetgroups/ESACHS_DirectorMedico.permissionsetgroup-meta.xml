@@ -4,6 +4,7 @@
     <label>ESACHS - Director Médico</label>
     <permissionSets>ESACHS_ContactolecturaCreacion</permissionSets>
     <permissionSets>ESACHS_Cuentalectura</permissionSets>
+    <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_OportunidadlecturaEdicion</permissionSets>
     <permissionSets>ESACHS_ProspectosLecturaEdicion</permissionSets>
     <status>Updated</status>

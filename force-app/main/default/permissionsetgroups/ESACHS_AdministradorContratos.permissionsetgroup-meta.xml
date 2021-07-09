@@ -4,6 +4,7 @@
     <label>Administrador de Contratos</label>
     <permissionSets>ESACHS_Contactototal</permissionSets>
     <permissionSets>ESACHS_Cuentatotal</permissionSets>
+    <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_Oportunidadtotal</permissionSets>
     <permissionSets>ESACHS_ProspectosLecturaCreacion</permissionSets>
     <status>Updated</status>

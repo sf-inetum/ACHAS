@@ -4,6 +4,7 @@
     <label>ESACHS - Gerencia</label>
     <permissionSets>ESACHS_Contactototal</permissionSets>
     <permissionSets>ESACHS_Cuentatotal</permissionSets>
+    <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_LeadtotalGerencia</permissionSets>
     <permissionSets>ESACHS_Oportunidadtotal</permissionSets>
     <status>Updated</status>
