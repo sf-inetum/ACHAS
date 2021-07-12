@@ -13,7 +13,7 @@
     <filters>
         <field>LEAD.STATUS</field>
         <operation>equals</operation>
-        <value>ESACHS_ValidacionDeInformación</value>
+        <value>ESACHS_ValidacionDeInformacion</value>
     </filters>
     <filters>
         <field>LEAD.RECORDTYPE</field>

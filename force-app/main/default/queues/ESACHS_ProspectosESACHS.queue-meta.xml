@@ -3,10 +3,6 @@
     <doesSendEmailToMembers>true</doesSendEmailToMembers>
     <name>Prospectos ESACHS</name>
     <queueMembers>
-        <users>
-            <user>alberto.valle@inetum.world.achs.dev</user>
-            <user>nuria.duran@inetum.world.achs.dev</user>
-        </users>
     </queueMembers>
     <queueSobject>
         <sobjectType>Lead</sobjectType>

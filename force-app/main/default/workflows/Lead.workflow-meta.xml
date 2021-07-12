@@ -148,6 +148,17 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>ESACHS_DesmarcarFlagAprobacion</fullName>
+        <description>Desmarcar Flag Aprobación Requerida</description>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>0</literalValue>
+        <name>Desmarcar Flag Aprobación Requerida</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>ESACHS_MotivoDedescarte</fullName>
         <field>ESACHS_MotivoDeDescarte__c</field>
         <literalValue>Negocio no factible</literalValue>
@@ -176,5 +187,25 @@
         </criteriaItems>
         <description>Asigna el Lead Status de ESACHS_IngresoDeSolicitud a los prospectos que son creados desde el Web To Lead</description>
         <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ESACHS_Descartado</fullName>
+        <actions>
+            <name>ESACHS_DesmarcarFlagAprobacion</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Descartado</value>
+        </criteriaItems>
+        <description>Se actualizad el campo ESACHS_AprobacionRequerida__c a false</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

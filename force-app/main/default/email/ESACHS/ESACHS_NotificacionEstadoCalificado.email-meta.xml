@@ -5,7 +5,7 @@
     <encodingKey>ISO-8859-1</encodingKey>
     <name>Notificación Estado Calificado</name>
     <style>none</style>
-    <subject>Rechazo de factibilidad</subject>
+    <subject>Cambio de Estado a Calificado</subject>
     <textOnly>Estimados usuarios,
 
 El análisis de factibilidad del prospecto &quot;{!Lead.ESACHS_TipoDeServicio__c}  {!Lead.Company}&quot; ha pasado ha estado calificado.

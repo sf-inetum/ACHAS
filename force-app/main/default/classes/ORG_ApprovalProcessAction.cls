@@ -6,7 +6,7 @@
 * @Revision
 **********************************************************************************/
 
-public with sharing class ORG_ApprovalProcessAction {
+public without sharing class ORG_ApprovalProcessAction {
 
     public static string comentario = 'Auto aprobado por el proceso automático de 48h.';
     /** 

@@ -3,9 +3,6 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ESACHS - Gerencia</name>
     <queueMembers>
-        <users>
-            <user>nuria.duran@inetum.world.achs.dev</user>
-        </users>
     </queueMembers>
     <queueSobject>
         <sobjectType>Lead</sobjectType>
