@@ -16,7 +16,7 @@ public class ESACHS_AutoApproveLead_test {
         //Recupero Usuario Administrador:
         User userAdmin = ESACHS_FactoriaDatosTest.createUserAdmin();
         //Creo dataset de Leads:
-        List<Lead> leadLst = ESACHS_FactoriaDatosTest.createNewLeadCentroSalud(2);
+        List<Lead> leadLst = ESACHS_FactoriaDatosTest.createNewLeadCentroSalud(1);
         for (Lead leadTmp : leadLst){
             leadTmp.OwnerId = userAdmin.Id;
         }   
