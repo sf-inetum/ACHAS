@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_Ventas</fullName>
+    <active>true</active>
+    <label>Ventas ESACHS</label>
+    <picklistValues>
+        <picklist>Consultoria_o_Gestion__c</picklist>
+        <values>
+            <fullName>BAPP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipo de Gobierno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LDI y Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LWS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OCDI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proceso de Venta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reuniones Internas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAFEALIGN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tiempo Administrativo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tiempo de Viaje</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visión</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Estado__c</picklist>
+        <values>
+            <fullName>Anulada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atrasada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>En Gestión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalizada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nueva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planificada</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Reprogramada</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Motivo__c</picklist>
+        <values>
+            <fullName>Acompañamiento post-comunicación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acompañamiento post-primera investigación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividad Comercial 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividad Comercial 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividad Comercial 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anexo prescripción por EPSM posterior</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría CDA COVID 19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría Grupo de Discusión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría Implementación de Medidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría Normativa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría Planificación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría apoyo normativo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría de resultados</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría%C2%A0CdA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacitación PAP COVID 19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacitación Teletrabajo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caracterización de evaluación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carta de anulación o suspensión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comisión de prevención</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comunicación de política</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Egreso PV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ejecución Grupo Discusión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración de declaración o política</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración de procedimiento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Habilitación ISTAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Listado de trabajadores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoreo de medidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoreo de recomendaciones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notificación de incorporación PV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plan preventivo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescripción de cumplimiento de etapa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescripción de medidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentación de resultados de diagnóstico SM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentación de servicios de contingencia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Programa de retorno al trabajo Jefaturas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Programa de retorno al trabajo Trabajadores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protocolo acogida denuncia Matriz Haddon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recomendación de medidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rectificación Prescripción</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rectificación de Recomendación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reevaluación RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reevaluación de protocolo RB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reevaluación de protocolo RM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión contraparte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Seguimiento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de presentación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión estrategia de comunicación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seminario de difusión Protocolo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Buscando momentos para disfrutar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Higiene del Sueño</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller de duelo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller gestión de nuestros miedos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traslado por asesoría</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verificación de cumplimiento etapas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verificación y Control de medidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verificación y control de recomendaciones</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Resultado_Mediciones__c</picklist>
+        <values>
+            <fullName>IPER presencia del agente y exposición %3C%3D30%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IPER presencia del agente y exposición %3E30%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IPER presencia del agente y sin exposición</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IPER sin presencia del agente</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR4 sílice %3C5 veces límite permisible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR4 sílice %3E5 veces límite permisible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR4 sílice IT cualitativo construcción</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsor_Feedback_del_Servicio__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsor_Motivo__c</picklist>
+        <values>
+            <fullName>Cierre de acuerdos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconocimiento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recuperación de servicio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión Consultoría Estratégica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión Nivel Ejecutivo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Salud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revisión de cumplimiento de plan de colaboración</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sponsor_Nivel_de_la_reunion__c</picklist>
+        <values>
+            <fullName>Estratégico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operativo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Táctico</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Anulada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aprobada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asignado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atrasada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eliminada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>En Desarrollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>En Gestión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>En Reparo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalizada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Nueva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pendiente VB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planificada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Por Planificar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realizada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rechazada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reprogramada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Actividad Comercial 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividad Comercial 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividad Comercial 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividades de difusión y seminarios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aprobación Gastos de Traslado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría Protocolos Silice PLANESI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría TMERT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría etapa 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría etapa 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría etapa 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesoría protección auditiva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confort Ambiental Teletrabajo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corregir Solicitud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cumplimiento del Protocolo PREXOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Egreso INE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración INE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración de material interno de equipo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrega IT NR4 Sílice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ergonomía Teletrabajo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación Cuantitativa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Focalización</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identificación de peligro %28IPER%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingreso Actividades a sistema</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingreso de Rendiciones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insistencias</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notificación de Riesgo 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otras Actividades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reclamo Asistencial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconfirmación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recopilación de Antecedentes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rectificación de informe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solicitud de Firma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solicitud de Informe Médico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solicitud de aprobación INE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tarea Vigilancia Psicosocial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terreno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Validación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verificación y control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visita</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visita SVE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tipo__c</picklist>
+        <values>
+            <fullName>Actividades Comerciales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesorías - Reunión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesorías Normativas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cartera GIGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cierre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prevención de Violencia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Programa Vigilancia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protocolo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reevaluación RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traslado</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Titulo__c</picklist>
+        <values>
+            <fullName>Acompañamiento y coaching a consultor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actividades de difusión y seminarios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calibración o feedback DEKRA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capacitación en Observaciones y en Software RINCON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cierre compromiso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construcción de Planes de Acción</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construcción visión%3A preámbulo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ejecución</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración de material interno de equipo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración y Envío del Reporte Final</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elaboración y preparación de material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrega Resultados Individuales y Construcción Planes de Acción</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrenamiento Tecnologías</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrenamiento verificación controles críticos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrenamiento y alineamiento al Liderazgo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrenamientos varios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación de Sustentabilidad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extracción comportamientos con equipos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flash assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundamentos %26 Desarrollo CBI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFC verificación controles críticos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingreso Actividades a sistema</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingreso de Rendiciones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lanzamiento y primera sesión de comité de soporte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otras Actividades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otros - Proceso de Venta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planes de Acción Sustentabilidad y Cierre Comité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preparación y validación de propuesta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentación de Resultados con líderes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentación preliminar de resultados</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realización de F%2EG%2Es y Entrevistas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinado visión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporte y Seguimiento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reuniones con Responsable cliente ACHS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reuniones de Calibración y Colegio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión Comité de Soporte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión Equipo Interno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión Inicial de Focalización</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión con Consultor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Planeación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Planeación %28incorpora entregable%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Planeación y Setup del LDI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de Planeación y Setup del OCDI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de cierre con líder%28es%29 responsable%28s%29 de la iniciativa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión de planificación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión equipo gobierno 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión equipo gobierno 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión equipo gobierno 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión equipo gobierno 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reunión inicial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revisión Preliminar de Datos y Curso de Observador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revisión de Calidad de las Observaciones Y Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revisión de Sustentabilidad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión Grupal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión IFC 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión IFC 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión IFC 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión IFC 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión In Field Coaching 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión In Field Coaching 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión In Field Coaching 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión In Field Coaching 4 %28opcional%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión de análisis 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión de análisis 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión de análisis 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión de estrategia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sesión ejecutiva de LGF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Coaching en Terreno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Contactos de Seguridad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Fundamentos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller LWS y Presentación de los Resultados Globales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Liderando con Seguridad para Líderes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Sesiónes de Seguridad en el Trabajo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller Verificación de Reglas que Salvan la Vida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller de Diseño de la Implementación %28IDW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller de Inspeciones de Riesgos Físicos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller de Prevención LGF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taller del Facilitador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Talleres LWS y%2Fo Otros para Liderazgo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uso de Datos y Planes de Acción</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Validación de propuesta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Validación final por el líder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viaje</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Asesorías - Reunión</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asesorías - Seminario</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cierre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluación RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prevención de Violencia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Programa Vigilancia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protocolo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reevaluación RA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
