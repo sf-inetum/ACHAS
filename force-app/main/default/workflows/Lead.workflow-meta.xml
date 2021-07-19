@@ -86,6 +86,16 @@
         <template>unfiled$public/Prospecto_ha_estado_priorizado</template>
     </alerts>
     <fieldUpdates>
+        <fullName>ESACHS_ActualizaAprobacionRequerida</fullName>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>0</literalValue>
+        <name>Actualiza Aprobación Requerida</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>ESACHS_ActualizaFlagAprobacion</fullName>
         <description>Este campo es utilizado para indicar que el proceso Lead ha sido aprobado por el proces de aprobación</description>
         <field>ESACHS_AprobacionRequerida__c</field>
@@ -187,6 +197,22 @@
         </criteriaItems>
         <description>Asigna el Lead Status de ESACHS_IngresoDeSolicitud a los prospectos que son creados desde el Web To Lead</description>
         <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ESACHS - Desmarca Flag Aprobación Requerida</fullName>
+        <actions>
+            <name>ESACHS_ActualizaAprobacionRequerida</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Si se desea relanzar el proceso de validación (lo controlamos porque el check Aprobación Requerida será TRUE), desmarco este check para que se vuelva a obligar al usuario a relanzar la aprobación.</description>
+        <formula>AND( 
+NOT(ISBLANK(RecordTypeId)),
+RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,  
+OR(ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+OR (ISPICKVAL(Status,&apos;ESACHS_ValidacionDeInformacion&apos;),ISPICKVAL(Status ,&apos;ESACHS_IngresoDeSolicitud&apos;)),
+ESACHS_AprobacionRequerida__c = true)</formula>
+        <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>ESACHS_Descartado</fullName>

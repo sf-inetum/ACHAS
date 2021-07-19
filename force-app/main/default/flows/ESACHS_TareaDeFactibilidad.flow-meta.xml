@@ -188,7 +188,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_6_myRule_3_A1_1748548517</elementReference>
+                <elementReference>formula_7_myRule_3_A1_9408716284</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -422,7 +422,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_5_myRule_3_A2_5329813207</elementReference>
+                <elementReference>formula_6_myRule_3_A2_9016862446</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -653,7 +653,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_4_myRule_3_A3_4116154612</elementReference>
+                <elementReference>formula_5_myRule_3_A3_5319695145</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -712,14 +712,14 @@
                 <stringValue>Crear Tarea</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_8_A1</name>
+        <name>myRule_9_A1</name>
         <label>CrearTareaMedica</label>
-        <locationX>800</locationX>
+        <locationX>900</locationX>
         <locationY>200</locationY>
         <actionName>ESACHS_CrearTarea</actionName>
         <actionType>flow</actionType>
         <connector>
-            <targetReference>myRule_8_A2</targetReference>
+            <targetReference>myRule_9_A2</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -887,7 +887,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_11_myRule_8_A1_6938728579</elementReference>
+                <elementReference>formula_13_myRule_9_A1_4772975906</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -946,14 +946,14 @@
                 <stringValue>Crear Tarea</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_8_A2</name>
+        <name>myRule_9_A2</name>
         <label>CrearTareaOperaciones</label>
-        <locationX>800</locationX>
+        <locationX>900</locationX>
         <locationY>300</locationY>
         <actionName>ESACHS_CrearTarea</actionName>
         <actionType>flow</actionType>
         <connector>
-            <targetReference>myRule_8_A3</targetReference>
+            <targetReference>myRule_9_A3</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -1121,7 +1121,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_10_myRule_8_A2_3024528543</elementReference>
+                <elementReference>formula_12_myRule_9_A2_8289462140</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -1180,9 +1180,9 @@
                 <stringValue>Crear Tarea</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_8_A3</name>
+        <name>myRule_9_A3</name>
         <label>CrearTareaPrevención</label>
-        <locationX>800</locationX>
+        <locationX>900</locationX>
         <locationY>400</locationY>
         <actionName>ESACHS_CrearTarea</actionName>
         <actionType>flow</actionType>
@@ -1352,7 +1352,7 @@
             </processMetadataValues>
             <name>TaskSubject</name>
             <value>
-                <elementReference>formula_9_myRule_8_A3_5090923073</elementReference>
+                <elementReference>formula_11_myRule_9_A3_9722019966</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -1399,6 +1399,70 @@
         </inputParameters>
     </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>isChangedDecision10_myRule_9_ESACHS_AprobacionRequerida_c</name>
+        <label>isChangedDecision10_myRule_9_ESACHS_AprobacionRequerida_c</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_10_myRule_9_ESACHS_AprobacionRequerida_c</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.ESACHS_AprobacionRequerida__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.ESACHS_AprobacionRequerida__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_10_myRule_9_ESACHS_AprobacionRequerida_c</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>isChangedDecision4_myRule_3_ESACHS_AprobacionRequerida_c</name>
+        <label>isChangedDecision4_myRule_3_ESACHS_AprobacionRequerida_c</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>isChangedDecision10_myRule_9_ESACHS_AprobacionRequerida_c</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_4_myRule_3_ESACHS_AprobacionRequerida_c</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.ESACHS_AprobacionRequerida__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.ESACHS_AprobacionRequerida__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>isChangedDecision10_myRule_9_ESACHS_AprobacionRequerida_c</targetReference>
+            </connector>
+            <label>isChangedRule_4_myRule_3_ESACHS_AprobacionRequerida_c</label>
+        </rules>
+    </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -1534,7 +1598,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision7</targetReference>
+            <targetReference>myDecision8</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -1633,8 +1697,39 @@
                     <stringValue>Centro de Salud</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_4_myRule_3_ESACHS_AprobacionRequerida_c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>myRule_3_pmetdec</targetReference>
+                <targetReference>myRule_3_A1</targetReference>
             </connector>
             <label>ProcesoAprobaciónCentrodeSalud</label>
         </rules>
@@ -1646,13 +1741,13 @@
                 <numberValue>2.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision7</name>
-        <label>myDecision7</label>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_8</name>
+            <name>myRule_9</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -1747,135 +1842,54 @@
                     <stringValue>VSC Largo</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_10_myRule_9_ESACHS_AprobacionRequerida_c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>myRule_8_A1</targetReference>
+                <targetReference>myRule_9_A1</targetReference>
             </connector>
             <label>ProcesoAprobaciónVSCLargo</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>myRule_3_pmetdec</name>
-        <label>Previously Met Decision</label>
-        <locationX>300</locationX>
-        <locationY>100</locationY>
-        <defaultConnector>
-            <targetReference>myRule_3_A1</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
-        <rules>
-            <name>myRule_3_pmetnullrule</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_3_A1</targetReference>
-            </connector>
-            <label>Previously Met - Null</label>
-        </rules>
-        <rules>
-            <name>myRule_3_pmetrule</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>ESACHS_Factibilidad</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.ESACHS_AprobacionRequerida__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_old.ESACHS_TipoDeServicio__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Centro de Salud</stringValue>
-                </rightValue>
-            </conditions>
-            <label>Previously Met - Prev</label>
-        </rules>
-    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot;  + [Lead].LastName </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_11_myRule_9_A3_9722019966</name>
+        <dataType>String</dataType>
+        <expression>&quot;Proceso de aprobación pendiente del Lead: &quot;  + {!myVariable_current.LastName}</expression>
+    </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -1883,7 +1897,7 @@
                 <stringValue>&quot;Proceso de aprobación pendiente del Lead&quot;  + [Lead].LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_8_A2_3024528543</name>
+        <name>formula_12_myRule_9_A2_8289462140</name>
         <dataType>String</dataType>
         <expression>&quot;Proceso de aprobación pendiente del Lead&quot;  + {!myVariable_current.LastName}</expression>
     </formulas>
@@ -1894,7 +1908,7 @@
                 <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot;  + [Lead].LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_8_A1_6938728579</name>
+        <name>formula_13_myRule_9_A1_4772975906</name>
         <dataType>String</dataType>
         <expression>&quot;Proceso de aprobación pendiente del Lead: &quot;  + {!myVariable_current.LastName}</expression>
     </formulas>
@@ -1905,7 +1919,7 @@
                 <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot;+ [Lead].LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A3_4116154612</name>
+        <name>formula_5_myRule_3_A3_5319695145</name>
         <dataType>String</dataType>
         <expression>&quot;Proceso de aprobación pendiente del Lead: &quot;+ {!myVariable_current.LastName}</expression>
     </formulas>
@@ -1916,7 +1930,7 @@
                 <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot; + [Lead].LastName </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_3_A2_5329813207</name>
+        <name>formula_6_myRule_3_A2_9016862446</name>
         <dataType>String</dataType>
         <expression>&quot;Proceso de aprobación pendiente del Lead: &quot; + {!myVariable_current.LastName}</expression>
     </formulas>
@@ -1927,22 +1941,11 @@
                 <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot; &amp; [Lead].LastName</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_3_A1_1748548517</name>
+        <name>formula_7_myRule_3_A1_9408716284</name>
         <dataType>String</dataType>
         <expression>&quot;Proceso de aprobación pendiente del Lead: &quot; &amp; {!myVariable_current.LastName}</expression>
     </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>&quot;Proceso de aprobación pendiente del Lead: &quot;  + [Lead].LastName </stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_9_myRule_8_A3_5090923073</name>
-        <dataType>String</dataType>
-        <expression>&quot;Proceso de aprobación pendiente del Lead: &quot;  + {!myVariable_current.LastName}</expression>
-    </formulas>
-    <interviewLabel>ESACHS_TareaDeFactibilidad-10_InterviewLabel</interviewLabel>
+    <interviewLabel>ESACHS_TareaDeFactibilidad-11_InterviewLabel</interviewLabel>
     <label>Tarea de Factibilidad</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2099,7 +2102,7 @@
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
-    <startElementReference>myDecision</startElementReference>
+    <startElementReference>isChangedDecision4_myRule_3_ESACHS_AprobacionRequerida_c</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
