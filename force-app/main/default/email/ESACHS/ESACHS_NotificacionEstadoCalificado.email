@@ -1,0 +1,5 @@
+<p>Estimados usuarios,</p>
+<p>El an&aacute;lisis de factibilidad del prospecto "{!Lead.ESACHS_TipoDeServicio__c} {!Lead.Company}" ha pasado ha estado calificado.</p>
+<p>Por favor para revisar los detalles en el registro, haga clic aqu&iacute; {!Lead.Link}</p>
+<p><br />Muchas gracias</p>
+<p>Un saludo</p>

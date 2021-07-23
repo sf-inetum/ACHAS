@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_Gerencia_Lead</fullName>
+    <filterScope>Queue</filterScope>
+    <label>ESACHS - Gerencia</label>
+    <queue>ESACHS_Gerencia</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

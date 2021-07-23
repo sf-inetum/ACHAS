@@ -1,0 +1,4 @@
+<p>Estimado usuario(a),</p>
+<p>La oportunidad con nombre {!Opportunity.Name} esta en etapa de Validaci&oacute;n de la Propuesta. <br />Se ruega su revisi&oacute;n para aprobaci&oacute;n.<br />Para gestionar la oportunidad, haga clic aqu&iacute;: <a href="{!Opportunity.Link}">{!Opportunity.Link}</a></p>
+<p>Muchas gracias,</p>
+<p>Un Saludo</p>

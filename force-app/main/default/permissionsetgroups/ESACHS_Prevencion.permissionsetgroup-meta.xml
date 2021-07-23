@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Jefes de Prevención; Jefe Nacional de Prevención</description>
+    <label>ESACHS - Prevención</label>
+    <permissionSets>ESACHS_ContactolecturaCreacion</permissionSets>
+    <permissionSets>ESACHS_Cuentalectura</permissionSets>
+    <permissionSets>ESACHS_General</permissionSets>
+    <permissionSets>ESACHS_OportunidadlecturaEdicion</permissionSets>
+    <permissionSets>ESACHS_ProspectosLecturaEdicion</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ESACHS_GerenciaGeneral</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ESACHS Gerencia General</label>
+        <sharedTo>
+            <role>ESACHS_GerenciaGeneral</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Experto_Visualizaci_n_de_Capacitaciones</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Colabora las oportunidades de capacitación que fueron asignadas al Jefe de Capacitación para que sean visualizadas por expertos (evitando mostrar un mensaje de error al crear la oportunidad)</description>
+        <label>Experto - Visualización de Capacitaciones</label>
+        <sharedTo>
+            <group>Expertos_Visualizaci_n_Capacitaciones</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Solicitud de Capacitación</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>OTEC_ACHS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Colabora las oportunidades creadas por OTEC ACHS para que puedan gestionar su flujo completo</description>
+        <label>OTEC ACHS</label>
+        <sharedTo>
+            <role>OTEC_ACHS</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>0055x00000BUPpkAAH</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Opportunities_1</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Opportunities &gt;1</label>
+        <sharedTo>
+            <role>Jefatura_Desarrollo_Grandes_Cuentas</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Masa__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>cola_oportunidad</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>cola oportunidad</label>
+        <sharedTo>
+            <role>Controlador_Capacitaciones</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Solicitud de Capacitación</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>0055x00000BUJgQAAX</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Controladores_Capacitaciones</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Controladores Capacitaciones</label>
+        <sharedTo>
+            <role>Controlador_Capacitaciones</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Controlador_Capacitaciones</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Ejecutivo_de_Agencia</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Ejecutivo  de Agencia</label>
+        <sharedTo>
+            <role>Ejecutivo_de_Agencia</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Gerente_General</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Opps_Consultoria_en_Seguridad</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Se debe permitir que las funciones mencionadas anteriormente puedan visualizar/editar las Oportunidades del tipo de registro Consultoría en Seguridad sin importar quien sea el propietario de la Oportunidad</description>
+        <label>Opps Consultoria en Seguridad</label>
+        <sharedTo>
+            <group>Dekra</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Dekra</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Supervisor_centro_de_procesos</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Supervisor centro de procesos</label>
+        <sharedTo>
+            <roleAndSubordinates>Supervisor_centro_de_procesos</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Gerente_General</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Visualizacion_OTEC_ACHS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Visualización OTEC ACHS</label>
+        <sharedTo>
+            <role>OTEC_ACHS</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>OTEC_ACHS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

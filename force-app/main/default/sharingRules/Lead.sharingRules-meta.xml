@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ESACHS_DirectorMedicoNacional</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ESACHS Director Médico Nacional</label>
+        <sharedTo>
+            <role>ESACHS_DirectorMedicoNacional</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ESACHS_GerenciaComercial</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ESACHS Gerencia Comercial</label>
+        <sharedTo>
+            <role>ESACHS_GerenciaComercialYOperaciones</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ESACHS_JefePrevencion</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ESACHS Jefe Prevencion</label>
+        <sharedTo>
+            <role>ESACHS_JefeDdePrevencion</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Ventas ESACHS</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Leads_1</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Leads &gt;1</label>
+        <sharedTo>
+            <role>Jefatura_Desarrollo_Grandes_Cuentas</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>NumberOfEmployees</field>
+            <operation>greaterOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

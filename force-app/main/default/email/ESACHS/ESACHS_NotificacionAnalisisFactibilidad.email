@@ -1,0 +1,5 @@
+<p>Estimados usuarios,</p>
+<p>El prospecto relacionado al proyecto "{!Lead.ESACHS_TipoDeServicio__c}&amp;-&amp;{!Lead.Company}" est&aacute; en etapa de factibilidad. Por favor, su revisi&oacute;n en un plazo de 48 horas para su calificaci&oacute;n, si no hay comentarios se asumir&aacute; su factibilidad.</p>
+<p>Para gestionar el prospecto, haga clic aqu&iacute;&nbsp;<strong>{!Lead.Link}</strong></p>
+<p>Muchas gracias</p>
+<p>Un saludo</p>

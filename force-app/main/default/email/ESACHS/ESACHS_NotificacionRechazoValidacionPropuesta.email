@@ -1,0 +1,2 @@
+<p>Estimado/a {!Opportunity.OwnerFullName}</p>
+<p>La validaci&oacute;n de la propuesta "{!Opportunity.ESACHS_TipoDeServicio__c}-{!Opportunity.Account}" realizada por las &aacute;reas de apoyo ha sido rechazada, por favor revisar los detalles en el registro: <a href="{!Opportunity.Link}">{!Opportunity.Link}</a></p>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_AprobacionRequerida__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Este campo tiene que ser true para poder pasar de estatus &quot;Validación Propuesta&quot; a &quot;Propuesta Validada&quot;</description>
+    <externalId>false</externalId>
+    <label>Aprobación Requerida</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

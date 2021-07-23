@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Médico Director; Jefe Gestión Clínica Operacional; Enfermero/a de Gestión Clínica y Calidad</description>
+    <label>ESACHS Operaciones Clínicas</label>
+    <permissionSets>ESACHS_ContactolecturaCreacion</permissionSets>
+    <permissionSets>ESACHS_Cuentatotal</permissionSets>
+    <permissionSets>ESACHS_General</permissionSets>
+    <permissionSets>ESACHS_Oportunidadlectura</permissionSets>
+    <permissionSets>ESACHS_ProspectosLectura</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

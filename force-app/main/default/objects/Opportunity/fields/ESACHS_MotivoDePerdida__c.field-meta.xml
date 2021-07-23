@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_MotivoDePerdida__c</fullName>
+    <externalId>false</externalId>
+    <label>Motivo de perdida</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No gestionado</fullName>
+                <default>false</default>
+                <label>No gestionado</label>
+            </value>
+            <value>
+                <fullName>Falta de interés por el cliente</fullName>
+                <default>false</default>
+                <label>Falta de interés por el cliente</label>
+            </value>
+            <value>
+                <fullName>Falta de información del cliente</fullName>
+                <default>false</default>
+                <label>Falta de información del cliente</label>
+            </value>
+            <value>
+                <fullName>Demora en la respuesta por parte del cliente</fullName>
+                <default>false</default>
+                <label>Demora en la respuesta por parte del cliente</label>
+            </value>
+            <value>
+                <fullName>Negocio no factible</fullName>
+                <default>false</default>
+                <label>Negocio no factible</label>
+            </value>
+            <value>
+                <fullName>Negocio no interesante para ESACHS</fullName>
+                <default>false</default>
+                <label>Negocio no interesante para ESACHS</label>
+            </value>
+            <value>
+                <fullName>Demora en la respuesta por parte de ESACHS</fullName>
+                <default>false</default>
+                <label>Demora en la respuesta por parte de ESACHS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

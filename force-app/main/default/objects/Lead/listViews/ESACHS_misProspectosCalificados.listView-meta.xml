@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_misProspectosCalificados</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>RUT_Empresa__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>ESACHS_TipoDeServicio__c</columns>
+    <columns>ESACHS_AdministracionDelSeguroLey__c</columns>
+    <columns>ESACHS_SolicitudACHS__c</columns>
+    <columns>ESACHS_AporteACHS__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>ESACHS_Calificado</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.ESACHS_Ventas</value>
+    </filters>
+    <label>Mis Prospectos - Calificados</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>ESACHS_GerenciaComercialYOperaciones</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>
