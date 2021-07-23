@@ -21,6 +21,52 @@
         <template>unfiled$public/Alerta_por_falta_de_actividad</template>
     </alerts>
     <alerts>
+        <fullName>ESACHS_NotificaAprobacionPropuestaComercial</fullName>
+        <description>Notificación para informar de la aprobación de la propuesta comercial</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_NotificacionAprobacionPropuestaComercial</template>
+    </alerts>
+    <alerts>
+        <fullName>ESACHS_NotificacionAprobacionPropuestaComercial</fullName>
+        <description>Notificación para informar de la necesidad de la aprobación de la propuesta comercial</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>ESACHS_ValidadorComercial__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>ESACHS_ValidadorDireccionMedica__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>ESACHS_ValidadorOperaciones__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>ESACHS_ValidadorPrevencion__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_NotificacionNecesidadAprobacionPropuestaComercial</template>
+    </alerts>
+    <alerts>
+        <fullName>ESACHS_NotificacionRechazoValidacionPropuesta</fullName>
+        <description>Notificación Rechazo Validación de Propuesta</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ESACHS/ESACHS_NotificacionRechazoValidacionPropuesta</template>
+    </alerts>
+    <alerts>
         <fullName>Enviar_Correo_Opp_Aprobada</fullName>
         <description>Enviar Correo Opp Aprobada</description>
         <protected>false</protected>
@@ -183,10 +229,30 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Calle_2</fullName>
+        <field>Calle__c</field>
+        <formula>&apos;2&apos;</formula>
+        <name>Calle 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Carpeta_Aceptada</fullName>
         <field>Estatus_de_validacion_carpeta__c</field>
         <literalValue>Aceptada</literalValue>
         <name>Carpeta Aceptada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Chanage_Status</fullName>
+        <field>StageName</field>
+        <literalValue>Propuesta Validada</literalValue>
+        <name>Chanage Status</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
@@ -204,15 +270,34 @@
         <targetObject>AccountId</targetObject>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>ESACHS_ActualizaEstado</fullName>
-        <description>Actualiza el estado de la Oportunidad a &quot;Nuevo&quot;</description>
-        <field>StageName</field>
-        <literalValue>Nuevo</literalValue>
-        <name>Actualiza Estado</name>
+        <fullName>ESACHS_ActualizaAprobacionRequerida</fullName>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>0</literalValue>
+        <name>Actualiza Aprobación Requerida</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaCreacionPropuesta</fullName>
+        <field>StageName</field>
+        <literalValue>Creación Propuesta</literalValue>
+        <name>Actualiza a Creación Propuesta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaFlagAprobacion</fullName>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>1</literalValue>
+        <name>Actualiza Flag Aprobacion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>ESACHS_ActualizaRecordType</fullName>
@@ -221,6 +306,93 @@
         <lookupValue>ESACHS_Ventas</lookupValue>
         <lookupValueType>RecordType</lookupValueType>
         <name>Actualiza Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaStageOportunidad</fullName>
+        <description>Cambia el estado de la oportunidad tipo de registro &quot;Ventas ESACHS&quot; de &quot;Validación Propuesta&quot; a &quot;Propuesta Validada&quot;</description>
+        <field>StageName</field>
+        <literalValue>Propuesta Validada</literalValue>
+        <name>Actualiza Estado Oportunidad</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ActualizaValidacionPropuesta</fullName>
+        <field>StageName</field>
+        <literalValue>Validación de la Propuesta</literalValue>
+        <name>Actualiza a Validación de la Propuesta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_DesmarcaFlagAprobacion</fullName>
+        <field>ESACHS_AprobacionRequerida__c</field>
+        <literalValue>0</literalValue>
+        <name>Desmarca Flag Aprobación</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_DesmarcarFlagValidacionRechazada</fullName>
+        <field>ESACHS_PropuestaComercialRechazada__c</field>
+        <literalValue>0</literalValue>
+        <name>Desmarcar Flag Validación Rechazada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_MarcaFlagPropuestaRechazada</fullName>
+        <field>ESACHS_PropuestaComercialRechazada__c</field>
+        <literalValue>1</literalValue>
+        <name>Marca Flag Propuesta Comercial Rechazada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ValidacionComercial</fullName>
+        <field>ESACHS_ValidadorComercial__c</field>
+        <name>Validador Comercial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ValidadorDireccionMedica</fullName>
+        <field>ESACHS_ValidadorDireccionMedica__c</field>
+        <name>Validador Dirección Médica</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ValidadorOperaciones</fullName>
+        <field>ESACHS_ValidadorOperaciones__c</field>
+        <name>Validador Operaciones</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ESACHS_ValidadorPrevencion</fullName>
+        <field>ESACHS_ValidadorPrevencion__c</field>
+        <name>Validador Prevención</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>LookupValue</operation>
         <protected>false</protected>
@@ -700,39 +872,53 @@
         </workflowTimeTriggers>
     </rules>
     <rules>
-        <fullName>ESACHS - Asigna RT Ventas ESACHS Opportunity</fullName>
+        <fullName>ESACHS - Desmarca Flag Aprobación Requerida</fullName>
         <actions>
-            <name>ESACHS_ActualizaRecordType</name>
+            <name>ESACHS_ActualizaAprobacionRequerida</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.ESACHS_CreatedFromLead__c</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
-        <description>Asigna a las oportunidades generadas desde prospectos con RT Ventas ESACHS el RT Ventas ESACHS.</description>
-        <triggerType>onCreateOnly</triggerType>
+        <description>Si se desea relanzar el proceso de validación (lo controlamos porque el check Aprobación Requerida sera TRUE), desmarco este check para que se vuelva a obligar al usuario a relanzar la aprobación.</description>
+        <formula>AND(
+                NOT(ISBLANK(RecordTypeId)),
+                RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+                OR(ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+                OR(ISPICKVAL(StageName,&apos;Creación Propuesta&apos;),ISPICKVAL(StageName,&apos;Nuevo&apos;)),               
+                ESACHS_AprobacionRequerida__c = True
+               
+)</formula>
+        <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
-        <fullName>ESACHS - Cambia Estado Oportunidad</fullName>
+        <fullName>ESACHS_DesmarcarValidadorPropuesta</fullName>
         <actions>
-            <name>ESACHS_ActualizaEstado</name>
+            <name>ESACHS_ValidacionComercial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ESACHS_ValidadorDireccionMedica</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ESACHS_ValidadorOperaciones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ESACHS_ValidadorPrevencion</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Ventas ESACHS</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Opportunity.ESACHS_CreatedFromLead__c</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
-        <description>El estado predefinido de la oportunidad tras la conversión del Lead debe ser “Nuevo”.</description>
-        <triggerType>onCreateOnly</triggerType>
+        <description>Desmarcar campos de validador de propuesta</description>
+        <formula>AND(
+				NOT(ISBLANK(RecordTypeId)),
+				RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+				OR(ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+				NOT(ISPICKVAL(PRIORVALUE(StageName),&apos;Nuevo&apos;)),
+				ISCHANGED(StageName),
+				ISPICKVAL(StageName,&apos;Creación Propuesta&apos;)		 
+				 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>Fecha Asignacion</fullName>

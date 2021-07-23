@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notificación Necesidad Aprobación Propuesta Comercial</name>
+    <style>none</style>
+    <subject>Necesidad de aprobación de la propuesta comercial</subject>
+    <textOnly>Estimado usuario(a),
+
+La oportunidad con nombre {!Opportunity.Name} esta en etapa de Validación de la Propuesta.
+Se ruega su revisión para aprobación.
+Para gestionar la oportunidad, haga clic aquí: {!Opportunity.Link}
+
+Muchas gracias,
+
+Un Saludo</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
