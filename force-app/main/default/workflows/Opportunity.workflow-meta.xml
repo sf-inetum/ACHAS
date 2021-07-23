@@ -229,16 +229,6 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Calle_2</fullName>
-        <field>Calle__c</field>
-        <formula>&apos;2&apos;</formula>
-        <name>Calle 2</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Carpeta_Aceptada</fullName>
         <field>Estatus_de_validacion_carpeta__c</field>
         <literalValue>Aceptada</literalValue>
