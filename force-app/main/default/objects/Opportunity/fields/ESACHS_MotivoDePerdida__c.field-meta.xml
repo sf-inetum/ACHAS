@@ -2,51 +2,80 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ESACHS_MotivoDePerdida__c</fullName>
     <externalId>false</externalId>
-    <label>Motivo de perdida</label>
+    <label>Motivo de Perdida</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>StageName</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>No gestionado</fullName>
+                <fullName>ESACHS_NoGestionado</fullName>
                 <default>false</default>
                 <label>No gestionado</label>
             </value>
             <value>
-                <fullName>Falta de interés por el cliente</fullName>
+                <fullName>ESACHS_FaltaDeInteresPorElCliente</fullName>
                 <default>false</default>
                 <label>Falta de interés por el cliente</label>
             </value>
             <value>
-                <fullName>Falta de información del cliente</fullName>
+                <fullName>ESACHS_FaltaDeInformacionDelCliente</fullName>
                 <default>false</default>
                 <label>Falta de información del cliente</label>
             </value>
             <value>
-                <fullName>Demora en la respuesta por parte del cliente</fullName>
+                <fullName>ESACHS_DemoraEnLaRespuestaPorParteDelCliente</fullName>
                 <default>false</default>
                 <label>Demora en la respuesta por parte del cliente</label>
             </value>
             <value>
-                <fullName>Negocio no factible</fullName>
+                <fullName>ESACHS_NegocioNoFactible</fullName>
                 <default>false</default>
                 <label>Negocio no factible</label>
             </value>
             <value>
-                <fullName>Negocio no interesante para ESACHS</fullName>
+                <fullName>ESACHS_NegocioNoInteresanteParaESACHS</fullName>
                 <default>false</default>
                 <label>Negocio no interesante para ESACHS</label>
             </value>
             <value>
-                <fullName>Demora en la respuesta por parte de ESACHS</fullName>
+                <fullName>ESACHS_DemoraEnLaRespuestaPorParteDeESACHS</fullName>
                 <default>false</default>
                 <label>Demora en la respuesta por parte de ESACHS</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_NoGestionado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_FaltaDeInteresPorElCliente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_FaltaDeInformacionDelCliente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_DemoraEnLaRespuestaPorParteDelCliente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_NegocioNoFactible</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_NegocioNoInteresanteParaESACHS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdida</controllingFieldValue>
+            <valueName>ESACHS_DemoraEnLaRespuestaPorParteDeESACHS</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

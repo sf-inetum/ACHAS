@@ -170,12 +170,14 @@ public with sharing class ESACHS_HandlerLead {
         List<Lead> leadToApproveLst = new List<Lead>();
         List<Id> leadToApproveIdLst = new List<Id>();
         List<Datetime> lastUpdateDateLst = new List<Datetime>();
+        Id recordypeIdVentasESACHS = Schema.SObjectType.Lead.getRecordTypeInfosByDeveloperName().get(ESACHS_Constantes.ESACHS_VENTAS_RT).getRecordTypeId();
         for (Lead leadTmp : leadLst){
             //Obtengo el valor del campo aprobación requerida antes del update:
             Lead oldLead = leadOldMap.get(leadTmp.Id);
             System.debug('Campo Aprobación requerida Old: '+oldLead.ESACHS_AprobacionRequerida__c);
             System.debug('Campo Aprobación requerida New: '+leadTmp.ESACHS_AprobacionRequerida__c);
-            if( (oldLead.ESACHS_AprobacionRequerida__c != leadTmp.ESACHS_AprobacionRequerida__c) && leadTmp.ESACHS_AprobacionRequerida__c == true ){
+            if( leadTmp.RecordTypeId != null && leadTmp.RecordTypeId == recordypeIdVentasESACHS &&
+            (oldLead.ESACHS_AprobacionRequerida__c != leadTmp.ESACHS_AprobacionRequerida__c) && leadTmp.ESACHS_AprobacionRequerida__c == true ){
                 leadToApproveLst.add(leadTmp);
                 leadToApproveIdLst.add(leadTmp.Id);
                 lastUpdateDateLst.add(leadTmp.LastModifiedDate);
@@ -202,6 +204,33 @@ public with sharing class ESACHS_HandlerLead {
             // Si en un plazo de 48 desde inicio etapa factibilidad no se actualiza se aprueba automáticamente el proceso
             ESACHS_AutoApproveLead_sch autoApproveLeadSch = new ESACHS_AutoApproveLead_sch(leadToApproveLst, leadToApproveIdLst); 
             System.schedule('ESACHS_AutoApproveLead ' + String.valueOf(Datetime.now()),fireDateTime2 /*nextFireTime*/, autoApproveLeadSch);
+        }
+    }
+    /**
+    * @name: mapContactIdToOpportunityAfterConversion() method
+    * @author: Nuria Durán Rodríguez (INETUM)
+    * @description: Actualiza el campo "Nombre del contacto" con el Id del Contacto que se crea en la conversión del Lead
+    */ 
+    public static void mapContactIdToOpportunityAfterConversion(List<Lead> leadLst, Map<Id,Lead> leadOldMap){
+        List<Lead> leadToUpdateOppLst = new List<Lead>();
+        List<Opportunity> oppToUpdateContactLst = new List<Opportunity>();
+        Id recordypeIdVentasESACHS = Schema.SObjectType.Lead.getRecordTypeInfosByDeveloperName().get(ESACHS_Constantes.ESACHS_VENTAS_RT).getRecordTypeId();
+        for (Lead leadTmp : leadLst){
+            if(leadTmp.RecordTypeId != null && leadTmp.RecordTypeId == recordypeIdVentasESACHS && leadTmp.IsConverted
+            && leadTmp.ConvertedOpportunityId != null && leadTmp.ConvertedContactId != null){
+                leadToUpdateOppLst.add(leadTmp);
+            }
+        }
+        // Relleno el campo Nombre del contacto con el Id que viene almacenado en el campo ConvertedContactId del Lead
+        if(leadToUpdateOppLst.size() > 0){
+            for (Lead leadTmp : leadToUpdateOppLst){
+                Opportunity oppToUpdateContact = new Opportunity(Id = leadTmp.ConvertedOpportunityId, Nombre_del_contacto__c =  leadTmp.ConvertedContactId);
+                oppToUpdateContactLst.add(oppToUpdateContact);
+            }
+        }
+
+        if(oppToUpdateContactLst.size() > 0){
+            update oppToUpdateContactLst;
         }
     }
 

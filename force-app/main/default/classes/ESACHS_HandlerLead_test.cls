@@ -103,4 +103,32 @@ public class ESACHS_HandlerLead_test {
         }
         System.assert(solicitudProductosLstAfterLeadInsert.size() > solicitudProductosLeadLst.size());
     }
+
+    /**
+    * @name: mapContactIdToOpportunityAfterConversionTest() method
+    * @author: Nuria Durán Rodríguez (INETUM)
+    * @description: Actualiza el campo "Nombre del contacto" con el Id del Contacto que se crea en la conversión del Lead
+    */    
+    @isTest 
+    static void mapContactIdToOpportunityAfterConversionTest(){
+        Lead newLead = ESACHS_FactoriaDatosTest.createNewLeadForConversion();
+       
+        //Lanzo la conversion del Lead:
+        Test.startTest();
+ 		
+        Database.LeadConvert lc = new database.LeadConvert();
+        lc.setLeadId(newLead.Id);
+        LeadStatus convertStatus = [Select Id, MasterLabel from LeadStatus where IsConverted=true limit 1];
+        lc.setConvertedStatus(convertStatus.MasterLabel);
+        Database.LeadConvertResult lcr = Database.convertLead(lc);
+        System.assert(lcr.isSuccess());
+        
+        Test.stopTest();
+
+        Lead leadAfterConversion = [SELECT Id, ConvertedOpportunityId, ConvertedContactId FROM Lead WHERE LastName = 'Name Centro Salud' ];
+        Opportunity newOppAfterConversion = [SELECT Id, Nombre_del_contacto__c FROM Opportunity WHERE Id = :leadAfterConversion.ConvertedOpportunityId ];
+        //Compruebo que el campo Nombre del contacto de la oportunidad coincide con el contacto dado de alta tras la conversión del Lead:
+        System.assertEquals(leadAfterConversion.ConvertedContactId, newOppAfterConversion.Nombre_del_contacto__c);
+    
+    }
 }

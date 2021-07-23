@@ -73,6 +73,29 @@ public with sharing class ESACHS_FactoriaDatosTest {
     }
 
     /**
+    * @name: createNewLeadForConversion() method
+    * @author: Nuria Durán Rodríguez (INETUM)
+    * @description: Simula la creación de Leads para posteriormente convertirlos
+    */ 
+    public static Lead createNewLeadForConversion (){
+        Lead newLead = new Lead ( 
+            LastName = 'Name Centro Salud', RecordTypeId = recordypeIdVentasESACHS, Company = 'Test Company',
+            Email = 'test@gmail.com',
+            Confirmar_Email__c = 'test@gmail.com',
+            RUT_Empresa__c = '19301163-2',//string.ValueOf(i+ 0582503)+'-2',
+            Phone = string.ValueOf(603457498),
+            LeadSource = 'Web',
+            Status = 'ESACHS_Calificado',
+            RUT_del_contacto__c = '19301163-2',
+            NumberOfEmployees = 2,
+            ESACHS_ProductosServiciosSolicitados__c =ESACHS_Constantes.PRODUCTOS_VSC_CORTO );
+        
+        
+        insert newLead;
+        return newLead;
+    }
+
+    /**
     * @name: createUserAdmin() method
     * @author: Nuria Durán Rodríguez (INETUM)
     * @description: Simula la creación de un usuario con perfil Administrador

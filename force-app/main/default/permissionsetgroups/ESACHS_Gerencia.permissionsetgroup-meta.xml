@@ -6,6 +6,8 @@
     <permissionSets>ESACHS_Cuentatotal</permissionSets>
     <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_LeadtotalGerencia</permissionSets>
-    <permissionSets>ESACHS_Oportunidadtotal</permissionSets>
+    <permissionSets>ESACHS_OportunidadTotalGerencia</permissionSets>
+    <permissionSets>ESACHS_ProductoTotal</permissionSets>
+    <permissionSets>ESACHS_TareaTotal</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

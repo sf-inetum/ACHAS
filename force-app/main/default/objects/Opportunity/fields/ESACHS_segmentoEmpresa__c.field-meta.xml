@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_segmentoEmpresa__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Account.Segmento__c, 
+ &quot;GCC&quot;,&quot;GRAN CLIENTE CORPORATIVO&quot;,
+ &quot;GCN&quot;,&quot;GRAN CLIENTE NACIONAL&quot;,
+ &quot;GCR&quot;,&quot;GRAN CLIENTE REGIONAL&quot;,
+ &quot;IND&quot;,&quot;INDEPENDIENTE&quot;,
+ &quot;INSP&quot;,&quot;SOCIO PROTEGIDO&quot;,
+ &quot;P100&quot;,&quot;PREFERENTE 100&quot;,
+ &quot;PRE&quot;,&quot;PREFERENTE&quot;,
+ &quot;PYM&quot;, &quot;PYME &quot;,
+ &quot;PYP&quot;,&quot;PYME PLUS&quot;,
+ &quot;R100&quot;,&quot;REMA PREFERENTE 100&quot;,
+ &quot;RGCC&quot;,&quot;REMA GRAN CLIENTE CORPORATIVO&quot;,
+ &quot;RGCN&quot;,&quot;REMA GRAN CLIENTE NACIONAL&quot;,
+ &quot;RGCR&quot;,&quot;REMA GRAN CLIENTE REGIONAL&quot;,
+ &quot;RIND&quot;,&quot;REMA INDEPENDIENTE&quot;,
+ &quot;RISP&quot;,&quot;REMA SOCIO PROTEGIDO&quot;,
+ &quot;RPRE&quot;,&quot;REMA PREFERENTE&quot;,
+ &quot;RPYM&quot;,&quot;REMA PYME&quot;,
+ &quot;RPYP&quot;,&quot;REMA PYME PLUS&quot;, null )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Segmento Empresa</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

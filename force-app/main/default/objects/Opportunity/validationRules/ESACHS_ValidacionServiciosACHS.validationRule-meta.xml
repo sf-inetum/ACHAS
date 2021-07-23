@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_ValidacionServiciosACHS</fullName>
+    <active>true</active>
+    <description>Validación que requiera que los campos &quot;Motivo de Solicitud&quot; y &quot;% Aporte ACHS&quot; sea obligatorios si la solicitud proviene de ACHS para asegurar que el usuario ingrese esta información</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(RecordTypeId)),
+RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+OR(ISPICKVAL(StageName,&apos;Validación de la Propuesta&apos;),ISPICKVAL(StageName,&apos;Propuesta Validada&apos;),ISPICKVAL(StageName,&apos;Enviada a Cliente&apos;),ISPICKVAL(StageName,&apos;Captada&apos;)   ),
+
+ESACHS_SolicitudACHS__c=true,
+
+OR( ISBLANK(TEXT(ESACHS_MotivoDeSolicitud__c)),ISBLANK (TEXT(ESACHS_AporteACHS__c))))</errorConditionFormula>
+    <errorMessage>Debe completar los campos &quot;Motivo de Solicitud&quot; y &quot;% aporte ACHS&quot; ya que el prospecto corresponde a una &quot;Solicitud ACHS&quot;
+Actividad</errorMessage>
+</ValidationRule>

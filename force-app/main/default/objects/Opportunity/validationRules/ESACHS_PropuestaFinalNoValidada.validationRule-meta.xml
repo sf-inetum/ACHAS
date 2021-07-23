@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_PropuestaFinalNoValidada</fullName>
+    <active>true</active>
+    <description>El sistema no debe permitir que una oportunidad tipo de registro &quot;Ventas ESACHS&quot; siga avanzado si los campos de validación no tienen el valor &quot;Aprobado&quot;, por lo que, se debe generar una validación y arrojar un error.</description>
+    <errorConditionFormula>AND(
+				NOT(ISBLANK(RecordTypeId)),
+				RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+				ISCHANGED(StageName),
+				ESACHS_PropuestaComercialRechazada__c = true,
+				OR(ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+				OR(ISPICKVAL(StageName,&apos;Validación de la Propuesta&apos;),ISPICKVAL(StageName,&apos;Propuesta Validada&apos;),ISPICKVAL(StageName,&apos;Enviada a Cliente&apos;),ISPICKVAL(StageName,&apos;Captada&apos;))
+)</errorConditionFormula>
+    <errorMessage>La propuesta final no ha sido validada por las áreas de apoyo.</errorMessage>
+</ValidationRule>

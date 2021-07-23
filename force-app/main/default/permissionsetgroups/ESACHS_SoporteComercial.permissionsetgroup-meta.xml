@@ -7,5 +7,7 @@
     <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_Leadtotal</permissionSets>
     <permissionSets>ESACHS_Oportunidadtotal</permissionSets>
+    <permissionSets>ESACHS_ProductoLectura</permissionSets>
+    <permissionSets>ESACHS_TareaTotal</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_AprobacionRequerida</fullName>
+    <active>true</active>
+    <description>Validación para comprobar si es necesario pasar por el proceso de aprobación de Oportunidad (Validación de la Propuesta Final).</description>
+    <errorConditionFormula>AND(
+				NOT(ISBLANK(RecordTypeId)),
+				RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+				OR(ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+				OR(ISPICKVAL(StageName,&apos;Validación de la Propuesta&apos;),ISPICKVAL(StageName,&apos;Propuesta Validada&apos;),ISPICKVAL(StageName,&apos;Enviada a Cliente&apos;),ISPICKVAL(StageName,&apos;Captada&apos;)),				
+				ESACHS_AprobacionRequerida__c = False
+				
+)</errorConditionFormula>
+    <errorMessage>Es necesario pasar el proceso de aprobación.</errorMessage>
+</ValidationRule>

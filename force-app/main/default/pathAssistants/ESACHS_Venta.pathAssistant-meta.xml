@@ -5,9 +5,33 @@
     <fieldName>StageName</fieldName>
     <masterLabel>Ventas ESACHS</masterLabel>
     <pathAssistantSteps>
+        <info>&lt;p&gt;La oportunidad ha sido cerrada con status “Captada” ¡Felicitaciones!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Captada</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;Si estás trabajando una Oportunidad de “Centro de Salud” o “VSC Largo” debes crear la Propuesta Comercial o Cotización, adjuntar el documento en el registro y seleccionar el botón “Enviar para aprobación”&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Creación Propuesta</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;Debes enviar la Propuesta Comercial o Cotización al cliente y cerrar la oportunidad como “Captada” si este la ha aceptado o “Perdida” si la ha rechazado&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Enviada a Cliente</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;Ya has creado tu oportunidad, debes agregar los productos relacionados a la “Venta ESACHS” en la sección “Productos” y avanzar a la siguiente etapa “Creación Propuesta&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Nuevo</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
         <fieldNames>ESACHS_MotivoDePerdida__c</fieldNames>
-        <fieldNames>Motivo_de_Perdida__c</fieldNames>
+        <info>&lt;p&gt;La oportunidad ha sido cerrada con status “Perdida”, recuerda que puedes volver a abrir el registro en caso de comenzar de nuevo las negociaciones con el cliente&lt;/p&gt;</info>
         <picklistValueName>Perdida</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;Tu propuesta ya se encuentra validada y lista para ser enviada al cliente debes avanzar a la siguiente etapa&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Propuesta Validada</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Para avanzar a la siguiente etapa la Propuesta Comercial o Cotización debe estar aprobada por las áreas de apoyo&lt;/p&gt;</info>
+        <picklistValueName>Validación de la Propuesta</picklistValueName>
     </pathAssistantSteps>
     <recordTypeName>ESACHS_Ventas</recordTypeName>
 </PathAssistant>

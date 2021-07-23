@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>ESACHS_RecordTypeESACHS</name>
+        <label>Record type ESACHS</label>
+        <locationX>521</locationX>
+        <locationY>396</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ESACHS_RecordType</name>
+            <conditionLogic>1 AND NOT (2)</conditionLogic>
+            <conditions>
+                <leftValueReference>ESACHS_GetOpportunity.RecordType.DeveloperName</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>ESACHS_Ventas</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TeamMemberRole</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>ESACHS_</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ESACHS_CambioTeamRole</targetReference>
+            </connector>
+            <label>Record type</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Opportunity Team Role {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ESACHS-Opportunity Team Role</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>ESACHS_GetOpportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>253</locationX>
+        <locationY>391</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ESACHS_RecordTypeESACHS</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>ESACHS_CambioTeamRole</name>
+        <label>Cambio Team Role</label>
+        <locationX>721</locationX>
+        <locationY>401</locationY>
+        <inputAssignments>
+            <field>ESACHS_TeamRole__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>133</locationX>
+        <locationY>108</locationY>
+        <connector>
+            <targetReference>ESACHS_GetOpportunity</targetReference>
+        </connector>
+        <object>OpportunityTeamMember</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

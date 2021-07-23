@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ESACHS_ValidacionDireccionMedica__c</fullName>
+    <fullName>ESACHS_AporteACHS__c</fullName>
     <externalId>false</externalId>
-    <label>Validación Dirección Médica</label>
+    <label>% Aporte ACHS</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -13,14 +13,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Aprobado</fullName>
+                <fullName>Aporte parcial</fullName>
                 <default>false</default>
-                <label>Aprobado</label>
+                <label>Aporte parcial</label>
             </value>
             <value>
-                <fullName>Rechazado</fullName>
+                <fullName>Aporte total</fullName>
                 <default>false</default>
-                <label>Rechazado</label>
+                <label>Aporte total</label>
             </value>
         </valueSetDefinition>
     </valueSet>

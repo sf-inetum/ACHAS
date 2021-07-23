@@ -1,17 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>CreateTask</name>
-        <label>CreateTask</label>
-        <locationX>410</locationX>
-        <locationY>254</locationY>
+        <name>CrearTareaEntidad</name>
+        <label>CrearTareaEntidad</label>
+        <locationX>822</locationX>
+        <locationY>523</locationY>
+        <actionName>NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>AssignedTask</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Priority</name>
+            <value>
+                <elementReference>TaskPrioridad</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Status</name>
+            <value>
+                <elementReference>TaskStatus</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>TaskSubject</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>CrearTareaPersona</name>
+        <label>CrearTareaPersona</label>
+        <locationX>1119</locationX>
+        <locationY>518</locationY>
         <actionName>Lead.ESACHS_CreacionTask</actionName>
         <actionType>quickAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>OwnerId</name>
             <value>
-                <elementReference>Group.Id</elementReference>
+                <elementReference>AssignedTask</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -39,7 +84,123 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <actionCalls>
+        <name>GetObjectName</name>
+        <label>GetObjectName</label>
+        <locationX>956</locationX>
+        <locationY>196</locationY>
+        <actionName>ORG_UtilFlow</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>TipoObjeto</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordIdStrings</name>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>ObjectName</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
     <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>AssignedUser</name>
+        <label>AssignedUser</label>
+        <locationX>568</locationX>
+        <locationY>188</locationY>
+        <assignmentItems>
+            <assignToReference>AssignedTask</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Usuario</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GetObjectName</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>TipoUsuarioQueue</name>
+        <label>TipoUsuarioQueue</label>
+        <locationX>577</locationX>
+        <locationY>390</locationY>
+        <assignmentItems>
+            <assignToReference>AssignedTask</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Group.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GetObjectName</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>ESACHS_GetTipoAsignacion</name>
+        <label>GetTipoAsignacion</label>
+        <locationX>334</locationX>
+        <locationY>174</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsQueue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>QueueName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Group</targetReference>
+            </connector>
+            <label>IsQueue</label>
+        </rules>
+        <rules>
+            <name>Is_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Usuario</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignedUser</targetReference>
+            </connector>
+            <label>Is User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>TipoObjeto</name>
+        <label>TipoObjeto</label>
+        <locationX>951</locationX>
+        <locationY>375</locationY>
+        <defaultConnector>
+            <targetReference>CrearTareaPersona</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Entidad</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ObjectName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Lead</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CrearTareaEntidad</targetReference>
+            </connector>
+            <label>Entidad</label>
+        </rules>
+    </decisions>
     <interviewLabel>Crear Tarea {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ESACHS - Crear Tarea</label>
     <processMetadataValues>
@@ -64,11 +225,11 @@
     <recordLookups>
         <name>Group</name>
         <label>Group</label>
-        <locationX>176</locationX>
-        <locationY>254</locationY>
+        <locationX>330</locationX>
+        <locationY>396</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>CreateTask</targetReference>
+            <targetReference>TipoUsuarioQueue</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -83,13 +244,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>216</locationX>
+        <locationY>7</locationY>
         <connector>
-            <targetReference>Group</targetReference>
+            <targetReference>ESACHS_GetTipoAsignacion</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>AssignedTask</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ObjectName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Lead</stringValue>
+        </value>
+    </variables>
     <variables>
         <name>QueueName</name>
         <dataType>String</dataType>
@@ -120,6 +298,13 @@
     </variables>
     <variables>
         <name>TaskSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Usuario</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_Ventas</fullName>
+    <fields>ESACHS_TipoDeServicio__c</fields>
+    <fields>Razon_Social__c</fields>
+    <fields>RUT_de_Empresa__c</fields>
+    <fields>ESACHS_segmentoEmpresa__c</fields>
+    <fields>ESACHS_AdministracionDelSeguroLey__c</fields>
+    <fields>ESACHS_SolicitudACHS__c</fields>
+    <label>ESACHS Ventas</label>
+</CompactLayout>

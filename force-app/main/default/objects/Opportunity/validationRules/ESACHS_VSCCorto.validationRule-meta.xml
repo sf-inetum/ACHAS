@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_VSCCorto</fullName>
+    <active>true</active>
+    <description>Si el campo &quot;Tipo de servicio&quot; tiene el valor &quot;VSC Corto&quot; el  campo Monto total debe de ser obligatorios para marcar el status &quot;Captada&quot; de la oportunidad tipo de registro &quot;Ventas ESACHS&quot;</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(RecordTypeId)),
+RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+ISPICKVAL(StageName,&apos;Captada&apos;),
+ISPICKVAL(ESACHS_TipoDeServicio__c,  &apos;VSC Corto&apos;),
+ISBLANK( Amount ) )</errorConditionFormula>
+    <errorMessage>Debe completar la sección &quot;Detalles del contrato&quot; para cerrar la oportunidad (Monte Total)</errorMessage>
+</ValidationRule>

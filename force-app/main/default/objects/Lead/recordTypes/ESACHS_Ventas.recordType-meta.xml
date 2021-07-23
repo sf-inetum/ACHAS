@@ -1939,23 +1939,23 @@
     <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
-            <fullName>ESACHS_AdministradorContrato</fullName>
+            <fullName>AdministradorContrato</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>ESACHS_CallCenter</fullName>
+            <fullName>CallCenter</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>ESACHS_CorreoElectronico</fullName>
+            <fullName>CorreoElectronico</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>ESACHS_DirectoGerenciaComercial</fullName>
+            <fullName>DirectoGerenciaComercial</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>ESACHS_ProcesosLicitacion</fullName>
+            <fullName>ProcesosLicitacion</fullName>
             <default>false</default>
         </values>
         <values>

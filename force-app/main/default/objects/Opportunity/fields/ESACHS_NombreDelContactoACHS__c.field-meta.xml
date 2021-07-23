@@ -4,9 +4,8 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Nombre del contacto ACHS</label>
-    <referenceTo>Contact</referenceTo>
-    <relationshipLabel>Opportunities (Nombre del contacto ACHS)</relationshipLabel>
-    <relationshipName>Opportunities</relationshipName>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities5</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

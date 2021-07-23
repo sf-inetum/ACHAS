@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_TeamRole</fullName>
+    <active>true</active>
+    <description>Comprueba que si team Role true</description>
+    <errorConditionFormula>ESACHS_TeamRole__c  =true</errorConditionFormula>
+    <errorMessage>No puedes poner esa función del equipo</errorMessage>
+</ValidationRule>

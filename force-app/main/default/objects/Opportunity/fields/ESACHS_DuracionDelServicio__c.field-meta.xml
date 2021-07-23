@@ -2,8 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ESACHS_DuracionDelServicio__c</fullName>
     <externalId>false</externalId>
-    <label>Duración del servicio</label>
-    <precision>3</precision>
+    <label>Duración del Servicio</label>
+    <precision>4</precision>
     <required>false</required>
     <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>

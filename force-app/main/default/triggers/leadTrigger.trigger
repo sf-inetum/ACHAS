@@ -33,9 +33,11 @@ trigger leadTrigger on Lead (before insert, before update, after insert, after u
         //Proyecto ESACHS 
     	//@author: Nuria Durán Rodríguez (INETUM)
         ESACHS_HandlerLead.submitForApprovalAuto(Trigger.new, Trigger.oldmap);
+        ESACHS_HandlerLead.mapContactIdToOpportunityAfterConversion(Trigger.new, Trigger.oldmap);
         
         // --- Conversion de Prospectos -----
-        leadTriggerHandler.leadConvertAccount(trigger.new);                
+        leadTriggerHandler.leadConvertAccount(trigger.new);  
+       
         
     }
     

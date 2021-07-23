@@ -3,6 +3,7 @@
     <fullName>ESACHS_Ventas</fullName>
     <active>true</active>
     <businessProcess>ESACHS_Ventas</businessProcess>
+    <compactLayoutAssignment>ESACHS_Ventas</compactLayoutAssignment>
     <description>RT para gestionar el proceso de ventas VSC o Centro de Salud</description>
     <label>Ventas ESACHS</label>
     <picklistValues>
@@ -2206,6 +2207,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>ESACHS_AporteACHS__c</picklist>
+        <values>
+            <fullName>Aporte parcial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aporte total</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>ESACHS_MonedaDelContrato__c</picklist>
         <values>
             <fullName>CLP</fullName>
@@ -2219,31 +2231,31 @@
     <picklistValues>
         <picklist>ESACHS_MotivoDePerdida__c</picklist>
         <values>
-            <fullName>Demora en la respuesta por parte de ESACHS</fullName>
+            <fullName>ESACHS_DemoraEnLaRespuestaPorParteDeESACHS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Demora en la respuesta por parte del cliente</fullName>
+            <fullName>ESACHS_DemoraEnLaRespuestaPorParteDelCliente</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Falta de información del cliente</fullName>
+            <fullName>ESACHS_FaltaDeInformacionDelCliente</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Falta de interés por el cliente</fullName>
+            <fullName>ESACHS_FaltaDeInteresPorElCliente</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Negocio no factible</fullName>
+            <fullName>ESACHS_NegocioNoFactible</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Negocio no interesante para ESACHS</fullName>
+            <fullName>ESACHS_NegocioNoInteresanteParaESACHS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>No gestionado</fullName>
+            <fullName>ESACHS_NoGestionado</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -2259,33 +2271,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>ESACHS_OrigenDeLaSolicitud__c</picklist>
-        <values>
-            <fullName>Administrador de Contrato</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Call Center</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Correo electrónico</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Directo con Gerencia Comercial</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Procesos de licitación</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Página web</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>ESACHS_TipoDeServicio__c</picklist>
         <values>
             <fullName>Centro de Salud</fullName>
@@ -2297,50 +2282,6 @@
         </values>
         <values>
             <fullName>VSC Largo</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>ESACHS_ValidacionDireccionMedica__c</picklist>
-        <values>
-            <fullName>Aprobado</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rechazado</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>ESACHS_ValidacionKAM__c</picklist>
-        <values>
-            <fullName>Aprobado</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rechazado</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>ESACHS_ValidacionOperaciones__c</picklist>
-        <values>
-            <fullName>Aprobado</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rechazado</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>ESACHS_Validacionprevencion__c</picklist>
-        <values>
-            <fullName>Aprobado</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rechazado</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -2502,87 +2443,27 @@
     <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
-            <fullName>Advertisement</fullName>
+            <fullName>AdministradorContrato</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Afiliate a la ACHS</fullName>
+            <fullName>CallCenter</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Afíliate a la ACHS %E2%80%93 Chat</fullName>
+            <fullName>CorreoElectronico</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Colaborador ACHS</fullName>
+            <fullName>DirectoGerenciaComercial</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>ESACHS_AdministradorContrato</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ESACHS_CallCenter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ESACHS_CorreoElectronico</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ESACHS_DirectoGerenciaComercial</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ESACHS_ProcesosLicitacion</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Employee Referral</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>External Referral</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lista de Objetivos</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Partner</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Plan de nuevos clientes %28Intranet%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Public Relations</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Seminar - Internal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Seminar - Partner</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Trade Show</fullName>
+            <fullName>ProcesosLicitacion</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Web</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Word of mouth</fullName>
             <default>false</default>
         </values>
     </picklistValues>

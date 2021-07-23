@@ -4,30 +4,6 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
-            <inputField>Pais__c</inputField>
-            <outputField>Pais__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Region__c</inputField>
-            <outputField>Regiones__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>RUT_Empresa__c</inputField>
-            <outputField>RUT_de_empresa__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>RUT_Referidor__c</inputField>
-            <outputField>RUT_Referidor__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Sede__c</inputField>
-            <outputField>Sede__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Trabajador_independiente__c</inputField>
-            <outputField>Trabajador_independiente__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Agencia__c</inputField>
             <outputField>Agencia__c</outputField>
         </mappingFields>
@@ -94,6 +70,30 @@
         <mappingFields>
             <inputField>Numero__c</inputField>
             <outputField>Numero__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Pais__c</inputField>
+            <outputField>Pais__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Region__c</inputField>
+            <outputField>Regiones__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>RUT_Empresa__c</inputField>
+            <outputField>RUT_de_empresa__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>RUT_Referidor__c</inputField>
+            <outputField>RUT_Referidor__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Sede__c</inputField>
+            <outputField>Sede__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Trabajador_independiente__c</inputField>
+            <outputField>Trabajador_independiente__c</outputField>
         </mappingFields>
         <outputObject>Account</outputObject>
     </objectMapping>
@@ -164,6 +164,14 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
+            <inputField>ESACHS_AporteACHS__c</inputField>
+            <outputField>ESACHS_AporteACHS__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>ESACHS_AdministracionDelSeguroLey__c</inputField>
+            <outputField>ESACHS_AdministracionDelSeguroLey__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Apellido_referidor__c</inputField>
             <outputField>Apellido_referidor__c</outputField>
         </mappingFields>
@@ -196,6 +204,10 @@
             <outputField>Correo_electronico_referidor__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>ESACHS_DuracionDelServicio__c</inputField>
+            <outputField>ESACHS_DuracionDelServicio__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>ESACHS_LeadConversion__c</inputField>
             <outputField>ESACHS_CreatedFromLead__c</outputField>
         </mappingFields>
@@ -206,6 +218,10 @@
         <mappingFields>
             <inputField>Masa_Prospecto_Comodin__c</inputField>
             <outputField>Masa__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>ESACHS_MotivoDeSolicitud__c</inputField>
+            <outputField>ESACHS_MotivoDeSolicitud__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Mutualidad_anterior__c</inputField>
@@ -230,6 +246,14 @@
         <mappingFields>
             <inputField>RUT_Referidor__c</inputField>
             <outputField>RUT_Referidor__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>ESACHS_SolicitudACHS__c</inputField>
+            <outputField>ESACHS_SolicitudACHS__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>ESACHS_TipoDeServicio__c</inputField>
+            <outputField>ESACHS_TipoDeServicio__c</outputField>
         </mappingFields>
         <outputObject>Opportunity</outputObject>
     </objectMapping>

@@ -6,6 +6,8 @@
     <permissionSets>ESACHS_Cuentalectura</permissionSets>
     <permissionSets>ESACHS_General</permissionSets>
     <permissionSets>ESACHS_OportunidadlecturaEdicion</permissionSets>
+    <permissionSets>ESACHS_ProductoLectura</permissionSets>
     <permissionSets>ESACHS_ProspectosLecturaEdicion</permissionSets>
+    <permissionSets>ESACHS_TareaTotal</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

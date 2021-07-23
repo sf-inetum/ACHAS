@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESACHS_VCSLargoCentroSalud</fullName>
+    <active>true</active>
+    <description>Si el campo &quot;Tipo de servicio&quot; tiene el valor &quot;Centro de Salud&quot; o &quot;VSC Largo&quot; los campos Monto total, fecha de inicio contrato, fecha final del contrato, duración y moneda debe de ser obligatorios para marcar el status &quot;Captada&quot;</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(RecordTypeId)),
+RecordType.DeveloperName = &apos;ESACHS_Ventas&apos;,
+ISPICKVAL(StageName,&apos;Captada&apos;), 
+OR(ISPICKVAL(ESACHS_TipoDeServicio__c,  &apos;Centro de Salud&apos;),ISPICKVAL(ESACHS_TipoDeServicio__c,&apos;VSC Largo&apos;)),
+OR( ISBLANK(Amount),ISBLANK ( ESACHS_FechaInicioContrato__c ),ISBLANK (ESACHS_FechaFinalDelContrato__c ),ISBLANK (ESACHS_DuracionDelServicio__c),ISBLANK (TEXT(ESACHS_MonedaDelContrato__c))))</errorConditionFormula>
+    <errorMessage>Debe completar la sección &quot;Detalles del contrato&quot; para cerrar la oportunidad</errorMessage>
+</ValidationRule>
