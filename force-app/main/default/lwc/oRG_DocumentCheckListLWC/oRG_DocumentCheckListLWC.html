@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Document Checklist Items" icon-name="custom:custom14"></lightning-card>
+    <template if:true={docList}>
+        <div style="height: auto; max-height: 150px; overflow:auto">
+            <lightning-datatable data={docList} columns={columns} key-field="Id" hide-checkbox-column="true" onsave={handleSave} draft-values={draftValues}>
+            </lightning-datatable>
+        </div>
+    </template>
+    <template if:true={error}>
+        {error}
+    </template>
+</template>
